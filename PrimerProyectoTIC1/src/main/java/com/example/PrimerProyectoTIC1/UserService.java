@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonaService  {
+public class UserService {
 
     @Autowired
-    PersonaRepository repository;
+    UserRepository repository;
     public void agregarCliente(String nombre,String direccion,Long telefono){
-        Persona1 persona1 =new Persona1(nombre,telefono,direccion);
+        User persona1 =new User(nombre,telefono,direccion);
         repository.save(persona1);
 
     }

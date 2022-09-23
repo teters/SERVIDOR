@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Persona1 {
+public class User {
     @Id
     private Long telefono;
     @Column
@@ -14,14 +14,14 @@ public class Persona1 {
 
 
 
-    public Persona1(String nombre, Long telefono, String direccion) {
+    public User(String nombre, Long telefono, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
     }
 
 
-    public Persona1() {
+    public User() {
 
     }
 

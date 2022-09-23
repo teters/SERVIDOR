@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PersonaController {
+public class UserController {
     @Autowired
-    PersonaService personaService;
-    @PostMapping(value= "persona")
-    public void guardarDatos(@RequestBody Persona1 persona1){
+    UserService userService;
+    @PostMapping(value= "User")
+    public void guardarDatos(@RequestBody User persona1){
         String nombre= persona1.getNombre();
         String direccion= persona1.getDireccion();
         Long telefono= persona1.getTelefono();
-        personaService.agregarCliente(nombre,direccion,telefono);
+        userService.agregarCliente(nombre,direccion,telefono);
     }
     @PostMapping(value= "empresa")
     public void guardarEmpresa(){}
