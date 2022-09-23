@@ -3,7 +3,7 @@ package com.example.PrimerProyectoTIC1;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="usuarios")
 public class User {
     @Id
     private Long telefono;
