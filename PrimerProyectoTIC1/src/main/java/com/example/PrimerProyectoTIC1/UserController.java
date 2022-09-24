@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     UserService userService;
-    @PostMapping(value= "User")
+    @PostMapping(value= "user")
     public void guardarDatos(@RequestBody User persona1){
         String nombre= persona1.getNombre();
         String direccion= persona1.getDireccion();
