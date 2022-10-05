@@ -11,14 +11,14 @@ public class User {
     @Column
     private String nombre;
     @Column
-    private String direccion;
+    private String mail;
 
 
 
     public User(String nombre, Long telefono, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
-        this.direccion = direccion;
+        this.mail = direccion;
     }
 
 
@@ -43,11 +43,11 @@ public class User {
     }
 
     public String getDireccion() {
-        return direccion;
+        return mail;
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        this.mail = direccion;
     }
 
     //@OneToMany(mappedBy = "telefono", cascade = CascadeType.ALL, orphanRemoval = true)
