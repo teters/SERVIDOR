@@ -10,9 +10,8 @@ public class BossEmpresa extends User{
     private Long telefono;
     private String mail;
 
-    public BossEmpresa(String teo, long l, String an_nicolas){
-        ;
-    }
+
+
 
     public BossEmpresa() {
 
