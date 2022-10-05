@@ -1,5 +1,7 @@
-package com.example.PrimerProyectoTIC1;
+package com.example.PrimerProyectoTIC1.Controllers;
 
+import com.example.PrimerProyectoTIC1.ClasesBD.User;
+import com.example.PrimerProyectoTIC1.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

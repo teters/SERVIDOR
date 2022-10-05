@@ -1,7 +1,8 @@
-package com.example.PrimerProyectoTIC1;
+package com.example.PrimerProyectoTIC1.Controllers;
 
+import com.example.PrimerProyectoTIC1.ClasesBD.Empresa;
+import com.example.PrimerProyectoTIC1.Services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.convert.ReadingConverter;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,5 @@ public class EmpresaController {
         empresaService.agregarEmpresa(nombre, telefono);
     }
 
-    }
-
 }
+

@@ -1,4 +1,4 @@
-package com.example.PrimerProyectoTIC1;
+package com.example.PrimerProyectoTIC1.ClasesBD;
 
 import javax.persistence.*;
 import java.util.ArrayList;
