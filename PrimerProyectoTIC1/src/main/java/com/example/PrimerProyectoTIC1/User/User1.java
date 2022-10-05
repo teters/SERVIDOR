@@ -1,11 +1,9 @@
-package com.example.PrimerProyectoTIC1.ClasesBD;
+package com.example.PrimerProyectoTIC1.User;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @MappedSuperclass
-public class User {
+public class User1 {
     @Id
     private Long telefono;
     @Column
@@ -15,14 +13,14 @@ public class User {
 
 
 
-    public User(String nombre, Long telefono, String direccion) {
+    public User1(String nombre, Long telefono, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.mail = direccion;
     }
 
 
-    public User() {
+    public User1() {
 
     }
 

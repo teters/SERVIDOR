@@ -1,17 +1,18 @@
-package com.example.PrimerProyectoTIC1.Services;
+package com.example.PrimerProyectoTIC1.Empresas;
 
-import com.example.PrimerProyectoTIC1.ClasesBD.Empresa;
-import com.example.PrimerProyectoTIC1.Repositories.EmpresasRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmpresaService {
+
     @Autowired
     EmpresasRepository empresasRepository;
+
     public void agregarEmpresa(String nombre, Long telefono){
-        Empresa empresa= new Empresa(telefono,nombre);
-        empresasRepository.save(empresa);
+        Empresa1 empresa1 = new Empresa1(telefono,nombre);
+        empresasRepository.save(empresa1);
 
     }
 }

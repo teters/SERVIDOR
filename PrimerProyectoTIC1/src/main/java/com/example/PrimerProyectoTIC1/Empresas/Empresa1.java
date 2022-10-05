@@ -1,22 +1,22 @@
-package com.example.PrimerProyectoTIC1.ClasesBD;
+package com.example.PrimerProyectoTIC1.Empresas;
 
 
 import javax.persistence.*;
 
 @Entity
-@Table
-public class Empresa {
+@Table(name="emresa")
+public class Empresa1 {
    @Id
    private Long telefono;
    @Column
    private String nombre;
 
-    public Empresa(Long telefono, String nombre) {
+    public Empresa1(Long telefono, String nombre) {
         this.telefono = telefono;
         this.nombre = nombre;
     }
 
-    public Empresa() {
+    public Empresa1() {
     }
 
     public Long getTelefono() {

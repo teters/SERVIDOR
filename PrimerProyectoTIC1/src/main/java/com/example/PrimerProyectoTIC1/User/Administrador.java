@@ -1,4 +1,4 @@
-package com.example.PrimerProyectoTIC1.ClasesBD;
+package com.example.PrimerProyectoTIC1.User;
 
 
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "Admin")
-public class Admin extends User {
+public class Administrador extends User1 {
 
 
 }

@@ -1,17 +1,15 @@
-package com.example.PrimerProyectoTIC1.Services;
+package com.example.PrimerProyectoTIC1.User;
 
-import com.example.PrimerProyectoTIC1.ClasesBD.User;
-import com.example.PrimerProyectoTIC1.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserServices {
 
     @Autowired
-    UserRepository repository;
+    UserRepository1 repository;
     public void agregarCliente(String nombre,String direccion,Long telefono){
-        User persona1 =new User(nombre,telefono,direccion);
+        User1 persona1 =new User1(nombre,telefono,direccion);
         repository.save(persona1);
 
     }
