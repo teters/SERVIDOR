@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 public class EmpresaService {
     @Autowired
     EmpresasRepository empresasRepository;
-    public agregarEmpresa(String nombre,String direccion){
+    public void agregarEmpresa(String nombre, Long telefono){
+        Empresa empresa= new Empresa(telefono,nombre);
+        empresasRepository.save(empresa);
 
     }
 }
