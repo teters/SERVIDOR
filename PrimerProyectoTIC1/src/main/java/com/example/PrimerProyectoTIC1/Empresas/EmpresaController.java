@@ -1,7 +1,5 @@
 package com.example.PrimerProyectoTIC1.Empresas;
 
-import com.example.PrimerProyectoTIC1.Empresas.Empresa1;
-import com.example.PrimerProyectoTIC1.Empresas.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

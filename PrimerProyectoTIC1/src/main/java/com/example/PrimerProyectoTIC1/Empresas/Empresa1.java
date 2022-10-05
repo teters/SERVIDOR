@@ -4,7 +4,7 @@ package com.example.PrimerProyectoTIC1.Empresas;
 import javax.persistence.*;
 
 @Entity
-@Table(name="emresa")
+@Table(name="empresas")
 public class Empresa1 {
    @Id
    private Long telefono;
