@@ -1,10 +1,7 @@
 package com.example.PrimerProyectoTIC1.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -18,6 +15,7 @@ public class UserControllers {
         Long telefono= persona1.getTelefono();
         userService.agregarCliente(nombre,direccion,telefono);
     }
+
 
 
 }
