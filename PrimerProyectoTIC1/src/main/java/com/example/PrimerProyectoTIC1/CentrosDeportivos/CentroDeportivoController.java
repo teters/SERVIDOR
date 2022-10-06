@@ -1,10 +1,7 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/centrodeportivo")
@@ -17,4 +14,5 @@ public class CentroDeportivoController {
         String direccion= cd1.getDireccion();
         centroDeportivoService.agregarCentroDeportivo(nombre,direccion);
     }
+
 }

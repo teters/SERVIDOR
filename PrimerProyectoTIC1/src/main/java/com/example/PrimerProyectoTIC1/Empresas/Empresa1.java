@@ -10,10 +10,17 @@ public class Empresa1 {
    private Long telefono;
    @Column
    private String nombre;
+   @Column
+   private String direccion;
 
-    public Empresa1(Long telefono, String nombre) {
+    public Empresa1(Long telefono, String nombre,String direccion) {
         this.telefono = telefono;
         this.nombre = nombre;
+        this.direccion=direccion;
+    }
+
+    public String getDireccion() {
+        return direccion;
     }
 
     public Empresa1() {
