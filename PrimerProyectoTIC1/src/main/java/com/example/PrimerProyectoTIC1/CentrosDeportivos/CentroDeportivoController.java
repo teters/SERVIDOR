@@ -1,7 +1,10 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
+import com.example.PrimerProyectoTIC1.Empresas.Empresa1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/centrodeportivo")
@@ -13,6 +16,10 @@ public class CentroDeportivoController {
         String nombre= cd1.getNombre();
         String direccion= cd1.getDireccion();
         centroDeportivoService.agregarCentroDeportivo(nombre,direccion);
+    }
+    @GetMapping("listaDeCentrosDeportivos")
+    public List<CentroDeportivo1> listaDeCentrosDeportivos(){
+        return centroDeportivoService.obtenerListaDeCentrosDeportivos();
     }
 
 }
