@@ -12,6 +12,7 @@ public class UsuariosTests {
     @Test
     public void herenciaDeUsuario(){
         BossEmpresa1 bossEmpresa= new BossEmpresa1();
+        bossEmpresa.setNombre("teo");
         assertEquals("teo",bossEmpresa.getNombre());
 
     }
