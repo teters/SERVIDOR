@@ -1,6 +1,7 @@
 package com.example.PrimerProyectoTIC1;
 
 
+import com.example.PrimerProyectoTIC1.User.BossCD1;
 import com.example.PrimerProyectoTIC1.User.BossEmpresa1;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,10 @@ public class UsuariosTests {
         BossEmpresa1 bossEmpresa= new BossEmpresa1();
         bossEmpresa.setNombre("teo");
         assertEquals("teo",bossEmpresa.getNombre());
+
+        BossCD1 bossCD = new BossCD1();
+        bossEmpresa.setNombre("aaaa");
+        assertEquals("aaaa", bossCD.getNombre());
 
     }
 }

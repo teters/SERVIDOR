@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
-public class UserControllers {
+public class UserControllers1 {
     @Autowired
     UserServices userService;
     @PostMapping("/user")
