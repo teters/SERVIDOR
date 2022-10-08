@@ -7,7 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/empresas")
-public class EmpresaController {
+public class EmpresaController1 {
     @Autowired
     EmpresaService empresaService;
     @PostMapping("/agregarEmpresa")

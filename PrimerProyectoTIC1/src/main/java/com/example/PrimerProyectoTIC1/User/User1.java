@@ -48,5 +48,4 @@ public class User1 {
         this.mail = direccion;
     }
 
-    //@OneToMany(mappedBy = "telefono", cascade = CascadeType.ALL, orphanRemoval = true)
 }
