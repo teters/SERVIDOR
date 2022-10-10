@@ -16,11 +16,11 @@ public class User1 {
 
 
 
-    public User1(Long id, String nombre, Long telefono, String direccion) {
+    public User1(Long id, String nombre, Long telefono, String mail) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.mail = direccion;
+        this.mail = mail;
     }
 
 
@@ -52,14 +52,6 @@ public class User1 {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return mail;
-    }
-
-    public void setDireccion(String direccion) {
-        this.mail = direccion;
-    }
-
     public String getMail() {
         return mail;
     }
@@ -67,4 +59,6 @@ public class User1 {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+
 }

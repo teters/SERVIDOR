@@ -12,7 +12,7 @@ public class UserControllers1 {
     public void guardarDatos(@RequestBody User1 persona1){
         Long id= persona1.getId();
         String nombre= persona1.getNombre();
-        String direccion= persona1.getDireccion();
+        String direccion= persona1.getMail();
         Long telefono= persona1.getTelefono();
         userService.agregarCliente(id, nombre,direccion,telefono);
     }
