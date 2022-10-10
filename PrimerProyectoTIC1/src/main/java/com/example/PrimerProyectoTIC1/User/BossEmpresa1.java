@@ -4,12 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Managers")
+//@Table (name = "Managers")
 public class BossEmpresa1 extends User1 {
-    private String nombre;
-    private Long telefono;
-    private String mail;
-
 
 
 
