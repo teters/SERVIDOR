@@ -9,4 +9,8 @@ import javax.persistence.Table;
 public class Administrador extends User1 {
 
 
+    public void crearBossEmpresa(){
+
+    }
+
 }
