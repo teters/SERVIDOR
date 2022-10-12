@@ -16,8 +16,8 @@ public class User1 {
 
 
 
-    public User1(Long id, String nombre, Long telefono, String mail) {
-        this.id = id;
+    public User1( String nombre, Long telefono, String mail) {
+
         this.nombre = nombre;
         this.telefono = telefono;
         this.mail = mail;

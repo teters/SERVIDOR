@@ -14,7 +14,7 @@ public class UserControllers1 {
         String nombre= persona1.getNombre();
         String direccion= persona1.getMail();
         Long telefono= persona1.getTelefono();
-        userService.agregarCliente(id, nombre,direccion,telefono);
+        userService.agregarCliente( nombre,direccion,telefono);
     }
 
 

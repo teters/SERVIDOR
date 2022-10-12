@@ -1,7 +1,6 @@
 package com.example.PrimerProyectoTIC1.User;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
@@ -10,9 +9,12 @@ import java.time.LocalDate;
 @Table(name = "empleados")
 
 public class Empleado extends User1{
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
-    public Empleado(Long id, String nombre, Long telefono, String mail, LocalDate fechaVenc, Long empresaID) {
-        super(id, nombre, telefono, mail);
+    public Empleado( String nombre, Long telefono, String mail, LocalDate fechaVenc, Long empresaID) {
+        super( nombre, telefono, mail);
         this.fechaVenc = fechaVenc;
         this.empresaID = empresaID;
     }

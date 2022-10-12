@@ -19,7 +19,7 @@ public class Empresa1 {
    private Long telefono;
    @Column
    private String nombre;
-   @Column
+   @Column(unique = true)
    private String direccion;
 
     public Empresa1(Long empresaID, Long telefono, String nombre,String direccion) {

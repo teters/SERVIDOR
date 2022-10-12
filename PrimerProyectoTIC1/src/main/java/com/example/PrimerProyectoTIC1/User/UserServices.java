@@ -8,8 +8,8 @@ public class UserServices {
 
     @Autowired
     UserRepository1 repository;
-    public void agregarCliente(Long id, String nombre,String direccion,Long telefono){
-        User1 persona1 =new User1(id, nombre,telefono,direccion);
+    public void agregarCliente( String nombre,String direccion,Long telefono){
+        User1 persona1 =new User1( nombre,telefono,direccion);
         repository.save(persona1);
 
     }
