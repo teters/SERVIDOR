@@ -10,7 +10,7 @@ public class BossEmpresa1 extends User1 {
 
     public BossEmpresa1() {}
     @OneToOne(cascade = CascadeType.ALL) //para que se persistan las instancias referenciadas
-    @JoinColumn(name = "nombre") //NO ES EL ID
+    @JoinColumn(name = "empresaID")
     private Empresa1 empresa;
 
 }
