@@ -11,17 +11,17 @@ public class Administrador extends User1 {
 //    EntityManager entityManager = entityManagerFactory.createEntityManager();
 //    entityManager.getTransaction().begin();
 
-    public void crearBossEmpresa(String nombre, Long telefono, String direccion){
+    public void crearBossEmpresa(String nombre, Long telefono, String mail){
         BossEmpresa1 bossEmpresa = new BossEmpresa1();
         bossEmpresa.setNombre(nombre);
         bossEmpresa.setTelefono(telefono);
-        bossEmpresa.setDireccion(direccion);
+        bossEmpresa.setMail(mail);
     }
-    public void crearBossCD(String nombre, Long telefono, String direccion){
+    public void crearBossCD(String nombre, Long telefono, String mail){
         BossCD1 bossCD1 = new BossCD1();
         bossCD1.setNombre(nombre);
         bossCD1.setTelefono(telefono);
-        bossCD1.setDireccion(direccion);
+        bossCD1.setMail(mail);
     }
 
 }
