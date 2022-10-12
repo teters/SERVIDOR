@@ -1,22 +1,31 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="centrodeportivo")
 public class CentroDeportivo1 {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     private String nombre;
     private String direccion;
 
     public CentroDeportivo1() {
     }
 
-    public CentroDeportivo1(String nombre, String direccion) {
+    public CentroDeportivo1(Long id, String nombre, String direccion) {
+        this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
