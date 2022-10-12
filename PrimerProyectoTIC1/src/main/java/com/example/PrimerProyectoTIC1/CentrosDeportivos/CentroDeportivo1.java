@@ -8,7 +8,9 @@ public class CentroDeportivo1 {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column
     private String nombre;
+    @Column(unique = true)
     private String direccion;
 
     public CentroDeportivo1() {

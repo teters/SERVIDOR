@@ -5,7 +5,7 @@ import com.example.PrimerProyectoTIC1.Empresas.Empresa1;
 import javax.persistence.*;
 
 @Entity
-//@Table (name = "Managers")
+@Table (name = "Managers")
 public class BossEmpresa1 extends User1 {
 
     public BossEmpresa1() {}

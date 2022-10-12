@@ -11,11 +11,12 @@ import java.util.Set;
 public class Empresa1 {
     @OneToMany
     @JoinColumn(name = "empresaID")
-    private Set<Empleado> empleados;
+    private Set<Empleado> SetEmpleados;
 
    @Id
    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long empresaID;
+   @Column(unique = true)
    private Long telefono;
    @Column
    private String nombre;

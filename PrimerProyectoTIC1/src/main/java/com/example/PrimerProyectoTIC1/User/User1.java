@@ -7,11 +7,11 @@ public class User1 {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    @Column
+    @Column(unique = true)
     private Long telefono;
     @Column
     private String nombre;
-    @Column
+    @Column(unique = true)
     private String mail;
 
 
