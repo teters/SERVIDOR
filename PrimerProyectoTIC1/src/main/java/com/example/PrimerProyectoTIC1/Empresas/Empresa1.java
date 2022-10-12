@@ -1,11 +1,17 @@
 package com.example.PrimerProyectoTIC1.Empresas;
 
 
+import com.example.PrimerProyectoTIC1.User.Empleado;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="empresas")
 public class Empresa1 {
+    @OneToMany
+    private Set<Empleado> empleados;
+
    @Id
    private Long telefono;
    @Column
@@ -41,4 +47,6 @@ public class Empresa1 {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
 }
