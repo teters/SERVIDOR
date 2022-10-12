@@ -1,15 +1,15 @@
 package com.example.PrimerProyectoTIC1.User;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 
-/*@Entity
-@Table */ //(name = "Boss Centro Deportivo")
-// esta tabla no deberia persistir en la BD
+import javax.persistence.*;
+
+@Entity
+@Table  (name = "BossCentroDeportivo")
 public class BossCD1 extends User1 {
 
-
-    public BossCD1() {
-
-    }
+    public BossCD1() {}
+    @OneToOne(cascade = CascadeType.ALL) //para que se persistan las instancias referenciadas
+    @JoinColumn(name = "nombre")
+    private CentroDeportivo1 centroDepor;
 }

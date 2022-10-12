@@ -13,7 +13,10 @@ public class EmpresaService {
     EmpresasRepository empresasRepository;
 
     public void agregarEmpresa(String nombre, Long telefono,String direccion){
-        Empresa1 empresa1 = new Empresa1(telefono,nombre,direccion);
+        Empresa1 empresa1 = new Empresa1();
+        empresa1.setNombre(nombre);
+        empresa1.setTelefono(telefono);
+        empresa1.setDireccion(direccion);
         empresasRepository.save(empresa1);
 
     }
