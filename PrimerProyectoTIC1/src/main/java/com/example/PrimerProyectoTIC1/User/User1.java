@@ -5,6 +5,9 @@ import javax.persistence.*;
 @MappedSuperclass
 public class User1 {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    @Column
     private Long telefono;
     @Column
     private String nombre;
@@ -13,15 +16,24 @@ public class User1 {
 
 
 
-    public User1(String nombre, Long telefono, String direccion) {
+    public User1(Long id, String nombre, Long telefono, String mail) {
+        this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.mail = direccion;
+        this.mail = mail;
     }
 
 
     public User1() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getTelefono() {
@@ -40,12 +52,13 @@ public class User1 {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
+    public String getMail() {
         return mail;
     }
 
-    public void setDireccion(String direccion) {
-        this.mail = direccion;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
+
 
 }
