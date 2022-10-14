@@ -1,10 +1,20 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
+import com.example.PrimerProyectoTIC1.Actividades.Actividad;
+import com.example.PrimerProyectoTIC1.User.Empleado;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="centrodeportivo")
 public class CentroDeportivo1 {
+
+    @OneToMany
+    @JoinColumn(name = "IDCentroDeportivo")
+    private Set<Actividad> SetActividades;
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

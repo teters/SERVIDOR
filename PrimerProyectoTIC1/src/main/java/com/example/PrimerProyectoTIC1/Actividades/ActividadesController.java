@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class ActividadesController {
 
-    ActividadService actividadService;
     @Autowired
-    @PostMapping("/user")
+    ActividadService actividadService;
+
+    @PostMapping("/actividad")
     public void guardarDatos(@RequestBody Actividad actividad){
         Long id= actividad.getId();
         DateTime horario= actividad.getHorario();
