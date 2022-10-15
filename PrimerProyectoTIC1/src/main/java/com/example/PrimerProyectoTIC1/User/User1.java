@@ -13,14 +13,17 @@ public class User1 {
     private String nombre;
     @Column(unique = true)
     private String mail;
+    @Column(unique = true)
+    private String password;
 
 
 
-    public User1( String nombre, Long telefono, String mail) {
+    public User1( String nombre, Long telefono, String mail,String password) {
 
         this.nombre = nombre;
         this.telefono = telefono;
         this.mail = mail;
+        this.password=password;
     }
 
 
@@ -58,6 +61,10 @@ public class User1 {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getPassword(){
+        return this.password;
     }
 
 

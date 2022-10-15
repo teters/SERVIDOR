@@ -4,6 +4,7 @@ package com.example.PrimerProyectoTIC1.Empresas;
 import com.example.PrimerProyectoTIC1.User.Empleado;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,7 +12,7 @@ import java.util.Set;
 public class Empresa1 {
     @OneToMany
     @JoinColumn(name = "empresaID")
-    private Set<Empleado> SetEmpleados;
+    private List<Empleado> Empleados;
 
    @Id
    @GeneratedValue(strategy = GenerationType.SEQUENCE)
