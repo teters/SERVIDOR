@@ -9,9 +9,10 @@ import java.time.LocalDate;
 @Table(name = "empleados")
 
 public class Empleado extends User1{
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long EmpleadoId;
 
     public Empleado( String nombre, Long telefono, String mail, LocalDate fechaVenc, Long empresaID) {
         super( nombre, telefono, mail);
