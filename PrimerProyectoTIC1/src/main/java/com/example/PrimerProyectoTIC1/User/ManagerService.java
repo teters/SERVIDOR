@@ -9,10 +9,10 @@ import java.util.List;
 public class ManagerService {
     @Autowired
     ManagerRepository repository;
-    public void agregarManager(String nombre, Long tel, String mail){
-        repository.save(new User1(nombre,tel,mail));
+    public void agregarManager(String nombre, Long tel, String mail,String password){
+        repository.save(new BossEmpresa1(nombre,tel,mail,password));
     }
-    public List<User1> obtenerListaDeManagers(){
+    public List<BossEmpresa1> obtenerListaDeManagers(){
         return repository.findAll();
     }
 }

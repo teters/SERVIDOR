@@ -13,16 +13,18 @@ import java.util.List;
 public class ManagersController {
     @Autowired
     ManagerService managerService;
-    @PostMapping("/agregarManager")
-    public void guardarEmpresa(@RequestBody User1 user) {
+    @PostMapping("/")
+    public void guardarManager(@RequestBody BossEmpresa1 user) {
         String nombre = user.getNombre();
         Long telefono = user.getTelefono();
-        String direccion=user.getMail();
-        //emService.agregarEmpresa(nombre, telefono,direccion);
+        String mail=user.getMail();
+        String password=user.getPassword();
+        managerService.agregarManager(nombre,telefono,mail,password);
     }
-    @GetMapping("listaDeManagers")
-    public List<User1> listaDeEmpresas(){
+    @GetMapping("/")
+    public List<BossEmpresa1> listaDeManagers(){
         return managerService.obtenerListaDeManagers();
     }
+
 
 }

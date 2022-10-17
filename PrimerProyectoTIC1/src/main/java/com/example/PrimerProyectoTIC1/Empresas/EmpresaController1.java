@@ -10,14 +10,14 @@ import java.util.List;
 public class EmpresaController1 {
     @Autowired
     EmpresaService empresaService;
-    @PostMapping("/agregarEmpresa")
+    @PostMapping("/")
     public void guardarEmpresa(@RequestBody Empresa1 empresa1) {
         String nombre = empresa1.getNombre();
         Long telefono = empresa1.getTelefono();
         String direccion=empresa1.getDireccion();
         empresaService.agregarEmpresa(nombre, telefono,direccion);
     }
-    @GetMapping("listaDeEmpresas")
+    @GetMapping("/")
     public List<Empresa1> listaDeEmpresas(){
         return empresaService.obtenerListaDeEmpresas();
     }
