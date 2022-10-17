@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long ActividadId;
     @Column
     private DateTime horario;
     @Column
@@ -21,7 +21,7 @@ public class Actividad {
 
 
     public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio) {
-        this.id = id;
+        this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
@@ -31,11 +31,11 @@ public class Actividad {
     public Actividad() {}
 
     public Long getId() {
-        return id;
+        return ActividadId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.ActividadId = id;
     }
 
     public DateTime getHorario() {
