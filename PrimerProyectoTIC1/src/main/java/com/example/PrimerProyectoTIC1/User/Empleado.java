@@ -21,9 +21,9 @@ public class Empleado extends User1{
 
 
 
-    @ManyToOne(cascade = CascadeType.ALL) //para que se persistan las instancias referenciadas
-    @JoinColumn(name = "empresaID")
-    private Empresa1 empresa;
+    //@ManyToOne(cascade = CascadeType.ALL) //para que se persistan las instancias referenciadas
+    //@JoinColumn(name = "empresaID")
+    //private Empresa1 empresa;
 
     public Long getSaldo() {
         return saldo;

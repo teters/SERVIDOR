@@ -1,0 +1,124 @@
+Index: PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/AdminService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.PrimerProyectoTIC1;\r\n\r\n\r\nimport javax.persistence.Column;\r\nimport javax.persistence.Entity;\r\nimport javax.persistence.Id;\r\nimport javax.persistence.Table;\r\n\r\n@Entity\r\n@Table\r\npublic class Admin {\r\n    @Id\r\n    private Long telefono;\r\n    @Column\r\n    private String nombre;\r\n    @Column\r\n    private String direccion;\r\n\r\n    public Admin(String nombre, Long telefono, String direccion) {\r\n        this.nombre = nombre;\r\n        this.telefono = telefono;\r\n        this.direccion = direccion;\r\n    }\r\n\r\n\r\n    public Admin() {}\r\n\r\n    public Long getTelefono() {\r\n        return telefono;\r\n    }\r\n\r\n    public void setTelefono(Long telefono) {\r\n        this.telefono = telefono;\r\n    }\r\n\r\n    public String getNombre() {\r\n        return nombre;\r\n    }\r\n\r\n    public void setNombre(String nombre) {\r\n        this.nombre = nombre;\r\n    }\r\n\r\n    public String getDireccion() {\r\n        return direccion;\r\n    }\r\n\r\n    public void setDireccion(String direccion) {\r\n        this.direccion = direccion;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/AdminService.java b/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/AdminService.java
+--- a/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/AdminService.java	(revision d92466954b377d83dcc1ab7adda882071f37b893)
++++ b/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/AdminService.java	(date 1663977860809)
+@@ -1,53 +1,25 @@
+ package com.example.PrimerProyectoTIC1;
+ 
+ 
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
+ import javax.persistence.Column;
+ import javax.persistence.Entity;
+ import javax.persistence.Id;
+ import javax.persistence.Table;
+ 
+-@Entity
+-@Table
+-public class Admin {
+-    @Id
+-    private Long telefono;
+-    @Column
+-    private String nombre;
+-    @Column
+-    private String direccion;
++@Service
++public class AdminService {
++    public void AgregarEmpresa(Empresa empresa){
++        reposit
+ 
+-    public Admin(String nombre, Long telefono, String direccion) {
+-        this.nombre = nombre;
+-        this.telefono = telefono;
+-        this.direccion = direccion;
+     }
+ 
+ 
+-    public Admin() {}
+ 
+-    public Long getTelefono() {
+-        return telefono;
+-    }
+ 
+-    public void setTelefono(Long telefono) {
+-        this.telefono = telefono;
+-    }
+ 
+-    public String getNombre() {
+-        return nombre;
+-    }
+-
+-    public void setNombre(String nombre) {
+-        this.nombre = nombre;
+-    }
+-
+-    public String getDireccion() {
+-        return direccion;
+-    }
+-
+-    public void setDireccion(String direccion) {
+-        this.direccion = direccion;
+-    }
+ 
+ 
+ }
+Index: PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/Admin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.PrimerProyectoTIC1;public class Admin {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/Admin.java b/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/Admin.java
+--- a/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/Admin.java	(revision d92466954b377d83dcc1ab7adda882071f37b893)
++++ b/PrimerProyectoTIC1/src/main/java/com/example/PrimerProyectoTIC1/Admin.java	(date 1663977860835)
+@@ -1,2 +1,41 @@
+-package com.example.PrimerProyectoTIC1;public class Admin {
++package com.example.PrimerProyectoTIC1;
++
++import java.util.List;
++
++public class Admin {
++    private String nombre;
++    private String mail;
++    private Long telefono;
++    private List empresas;
++    private List centrosDeportivos;
++
++    public Admin(String nombre, String mail, Long telefono) {
++        this.nombre = nombre;
++        this.mail = mail;
++        this.telefono = telefono;
++    }
++
++    public String getNombre() {
++        return nombre;
++    }
++
++    public void setNombre(String nombre) {
++        this.nombre = nombre;
++    }
++
++    public String getMail() {
++        return mail;
++    }
++
++    public void setMail(String mail) {
++        this.mail = mail;
++    }
++
++    public Long getTelefono() {
++        return telefono;
++    }
++
++    public void setTelefono(Long telefono) {
++        this.telefono = telefono;
++    }
+ }
