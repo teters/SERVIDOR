@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 import javax.persistence.*;
 
 @Entity
-
+@Table
 public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

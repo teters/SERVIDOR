@@ -1,7 +1,6 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
 
-import com.example.PrimerProyectoTIC1.Empresas.Empresa1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
