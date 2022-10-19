@@ -17,7 +17,7 @@ public class ActividadesController {
     @PostMapping("/actividad")
     public void guardarDatos(@RequestBody Actividad actividad){
         Long id= actividad.getId();
-        DateTime horario= actividad.getHorario();
+        String horario= actividad.getHorario();
         Integer cupos = actividad.getCupos();
         String nombre= actividad.getNombre();
         Float precio = actividad.getPrecio();
@@ -27,6 +27,10 @@ public class ActividadesController {
     @GetMapping("/")
     public List<Actividad> obtenerListaDeActividades(){
         return actividadService.obtenerListaDeActividades();
+    }
+    @GetMapping("/todas")
+    public List<String> obtenerNombres(){
+        return actividadService.obtenerListaDeActividadesPorNombre();
     }
 
 

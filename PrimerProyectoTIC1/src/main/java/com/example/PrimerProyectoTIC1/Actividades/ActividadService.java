@@ -15,7 +15,7 @@ public class ActividadService {
 
     @Autowired
     ActividadRepository actividadRepository;
-    public void agregarActividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio, String imagen){
+    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen){
         Actividad actividad =new Actividad();
         actividad.setHorario(horario);
         actividad.setCupos(cupos);
@@ -35,11 +35,9 @@ public class ActividadService {
         }
         return centros;
     }
-    public List<Actividad> obtenerListaDeActividadesPorNombre(String nombre){
-        List<Actividad> actividads=null;
-        actividads=actividadRepository.findByNombre(nombre);
-
-
+    public List<String> obtenerListaDeActividadesPorNombre(){
+        List<String> actividads=null;
+        actividads=actividadRepository.findByNombreDistinct();
         return actividads;
     }
 }
