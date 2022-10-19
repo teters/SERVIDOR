@@ -33,7 +33,7 @@ public class Empleado extends User1{
         this.saldo = saldo;
     }
 
-    public Empleado(String nombre, Long telefono, String mail, LocalDate fechaVenc, String password, Long saldo) {
+    public Empleado(String nombre, Long telefono, String mail, String fechaVenc, String password, Long saldo) {
         super( nombre, telefono, mail, password);
         this.fechaVenc = fechaVenc;
         this.saldo=saldo;
@@ -42,15 +42,15 @@ public class Empleado extends User1{
     public Empleado() {
     }
     @Column
-    private LocalDate fechaVenc;
+    private String fechaVenc;
     @Column
     private Long empresaID;
 
-    public LocalDate getFechaVenc() {
+    public String getFechaVenc() {
         return fechaVenc;
     }
 
-    public void setFechaVenc(LocalDate fechaVenc) {
+    public void setFechaVenc(String fechaVenc) {
         this.fechaVenc = fechaVenc;
     }
 
