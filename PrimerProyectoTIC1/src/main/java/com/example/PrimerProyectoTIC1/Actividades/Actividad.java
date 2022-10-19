@@ -19,13 +19,17 @@ public class Actividad {
     @Column
     private Float precio;
 
+    @Column
+    private String imagen;
 
-    public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio) {
+
+    public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio, String imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
     public Actividad() {}
@@ -68,5 +72,13 @@ public class Actividad {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

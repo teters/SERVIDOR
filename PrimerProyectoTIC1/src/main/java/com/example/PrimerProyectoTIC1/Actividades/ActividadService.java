@@ -13,15 +13,17 @@ import java.util.List;
 public class ActividadService {
 
     @Autowired
-    ActividadRepository actividadRepository;
-    public void agregarActividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio){
-        Actividad actividad =new Actividad(id,horario,cupos,nombre,precio);
-        actividadRepository.save(actividad);
+    ActividadRepository ActividadRepository;
+    public void agregarActividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio, String imagen){
+        Actividad actividad =new Actividad();
+        actividad.setHorario(horario);
+        actividad.setCupos(cupos);
+        actividad.setNombre(nombre);
+        actividad.setPrecio(precio);
+        actividad.setImagen(imagen);
+        ActividadRepository.save(actividad);
     }
     public List<Actividad> obtenerListaDeActividades(){
-        return actividadRepository.findAll();
-    }
-    public List<Actividad> obtenerListaDeActividadesPorNombre(String nombre){
-        return actividadRepository.findByNombre(nombre);
+        return ActividadRepository.findAll();
     }
 }
