@@ -12,4 +12,7 @@ import java.util.ListResourceBundle;
 public interface ActividadRepository extends JpaRepository<Actividad, String> {
     @Query("select a from Actividad a where a.nombre = ?1")
     List<Actividad> findByNombre(String nombre);
+
+
+
 }
