@@ -33,10 +33,20 @@ public class Empleado extends User1{
         this.saldo = saldo;
     }
 
-    public Empleado(String nombre, Long telefono, String mail, String fechaVenc, String password, Long saldo) {
+
+    public Empleado(String nombre, Long telefono, String mail, String fechaVenc, String password, Long saldo, Long empresaID) {
         super( nombre, telefono, mail, password);
         this.fechaVenc = fechaVenc;
         this.saldo=saldo;
+        this.empresaID=empresaID;
+    }
+
+    public Long getEmpresaID() {
+        return empresaID;
+    }
+
+    public void setEmpresaID(Long empresaID) {
+        this.empresaID = empresaID;
     }
 
     public Empleado() {

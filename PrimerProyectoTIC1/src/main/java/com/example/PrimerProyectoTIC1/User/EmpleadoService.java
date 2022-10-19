@@ -11,17 +11,28 @@ import java.util.List;
 public class EmpleadoService {
     @Autowired
     EmpleadoRepository repository;
-    public void crearEmpleado(String nombre, Long tel, String mail, String fechaVen, String password, Long saldo){
-        repository.save(new Empleado(nombre,tel,mail,fechaVen,password,saldo));
+    public void crearEmpleado(String nombre, Long tel, String mail, String fechaVen, String password, Long saldo,Long empresaId){
+        repository.save(new Empleado(nombre,tel,mail,fechaVen,password,saldo,empresaId));
     }
     public List<Empleado> getListaDeEmpleados(){
         System.out.println(repository.findAll().size());
         return repository.findAll();
     }
-    public Empleado obtenerEmpleadoPorMail(String nombre, Long tel, String mail, String fechaVen, String password, Long saldo){
-        List<Empleado> empleados=repository.findByMail(mail);
-        Empleado empleado=empleados.get(0);
-        return empleado;
+    public Empleado obtenerEmpleadoPorMail( String mail, String password){
+        Empleado empleadoGenerico=new Empleado("error",10L,"contra","incorrecta",".",1L,1L);
+        List<Empleado> empleados=repository.findAll();
+        Empleado empleado=empleadoGenerico;
+        for (int i = 0; i < empleados.size(); i++) {
+            if(empleados.get(i).getMail().equals(mail)){
+                empleado=empleados.get(i);
+            }
+
+        }
+        if(empleado.getPassword().equals(password)){
+            return empleado;
+        }else {
+            return empleadoGenerico;
+        }
 
     }
         /*Empleado empleado=new Empleado(nombre,tel,mail,fechaVen,password,saldo);
