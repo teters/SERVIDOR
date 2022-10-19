@@ -1,0 +1,89 @@
+<changelist name="Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]" date="1665064605991" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06-Oct-22 10:56 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/EmpresasRepository.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/User.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/UserController.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/CentroDeportivo.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/UserService.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/Empresa.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/CentroDeportivoRepository.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/7.5/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/7.5/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/Admin.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/BossEmpresa.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/build/classes/java/main/com/example/PrimerProyectoTIC1/UserRepository.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/7.5/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="PrimerProyectoTIC1/.gradle/7.5/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value="PrimerProyectoTIC1/.gradle/7.5/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06-Oct-22_10_56_AM_[Changes]/executionHistory.bin" />
+  </binary>
+</changelist>
