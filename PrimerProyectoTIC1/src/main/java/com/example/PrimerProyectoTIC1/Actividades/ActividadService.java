@@ -25,11 +25,14 @@ public class ActividadService {
         actividadRepository.save(actividad);
     }
     public List<Actividad> obtenerListaDeActividades(){
+
         return actividadRepository.findAll();
     }
     public List<CentroDeportivo1> obtenerListaDeCentrosDeportivos(List<Actividad> actividades){
-        List<CentroDeportivo1> centros=null;
-        actividades
+        List<CentroDeportivo1> centros = null;
+        for (int i = 0; i < actividades.size(); i++) {
+            centros.add(actividades.get(i).getCentroDeportivo1());
+        }
         return centros;
     }
     public List<Actividad> obtenerListaDeActividadesPorNombre(String nombre){
