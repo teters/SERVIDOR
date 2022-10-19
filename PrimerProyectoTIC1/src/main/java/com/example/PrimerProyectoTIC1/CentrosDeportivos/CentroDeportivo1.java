@@ -4,15 +4,14 @@ import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.User.Empleado;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name="centrodeportivo")
 public class CentroDeportivo1 {
 
-    @OneToMany
-    @JoinColumn(name = "IDCentroDeportivo")
-    private Set<Actividad> SetActividades;
 
 
     @Id
@@ -22,6 +21,17 @@ public class CentroDeportivo1 {
     private String nombre;
     @Column(unique = true)
     private String direccion;
+
+    @OneToMany(mappedBy = "centroDeportivo1")
+    private List<Actividad> actividads = new ArrayList<>();
+
+    public List<Actividad> getActividads() {
+        return actividads;
+    }
+
+    public void setActividads(List<Actividad> actividads) {
+        this.actividads = actividads;
+    }
 
     public CentroDeportivo1() {
     }

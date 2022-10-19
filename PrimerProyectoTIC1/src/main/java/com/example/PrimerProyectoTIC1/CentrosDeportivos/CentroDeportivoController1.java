@@ -10,13 +10,13 @@ import java.util.List;
 public class CentroDeportivoController1 {
     @Autowired
     CentroDeportivoService centroDeportivoService;
-    @PostMapping( "/agregarcentrodeportivo")
+    @PostMapping( "/")
     public void guardarDatos(@RequestBody CentroDeportivo1 cd1){
         String nombre= cd1.getNombre();
         String direccion= cd1.getDireccion();
         centroDeportivoService.agregarCentroDeportivo(nombre,direccion);
     }
-    @GetMapping("listaDeCentrosDeportivos")
+    @GetMapping("/")
     public List<CentroDeportivo1> listaDeCentrosDeportivos(){
         return centroDeportivoService.obtenerListaDeCentrosDeportivos();
     }

@@ -1,5 +1,6 @@
 package com.example.PrimerProyectoTIC1.Actividades;
 
+import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -10,6 +11,11 @@ public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ActividadId;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "centro_deportivo_1_id", nullable = false)
+    private CentroDeportivo1 centroDeportivo1;
+
     @Column
     private DateTime horario;
     @Column
@@ -19,13 +25,25 @@ public class Actividad {
     @Column
     private Float precio;
 
+    @Column
+    private String imagen;
 
-    public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio) {
+    public CentroDeportivo1 getCentroDeportivo1() {
+        return centroDeportivo1;
+    }
+
+    public void setCentroDeportivo1(CentroDeportivo1 centroDeportivo1) {
+        this.centroDeportivo1 = centroDeportivo1;
+    }
+
+
+    public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio, String imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
     public Actividad() {}
@@ -68,5 +86,13 @@ public class Actividad {
 
     public void setPrecio(Float precio) {
         this.precio = precio;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

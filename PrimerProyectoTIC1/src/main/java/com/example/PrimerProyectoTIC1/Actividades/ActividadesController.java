@@ -14,21 +14,18 @@ public class ActividadesController {
     @Autowired
     ActividadService actividadService;
 
-    @PostMapping("/")
+    @PostMapping("/actividad")
     public void guardarDatos(@RequestBody Actividad actividad){
         Long id= actividad.getId();
         DateTime horario= actividad.getHorario();
         Integer cupos = actividad.getCupos();
         String nombre= actividad.getNombre();
         Float precio = actividad.getPrecio();
-        actividadService.agregarActividad(id, horario, cupos, nombre, precio);
-    }
-    @GetMapping("/{nombre}/")
-    public List<Actividad> obtenerActividadPorNombre(String nombre){
-        return actividadService.obtenerListaDeActividadesPorNombre(nombre);
+        String imagen = actividad.getImagen();
+        actividadService.agregarActividad(id, horario, cupos, nombre, precio, imagen);
     }
     @GetMapping("/")
-    public List<Actividad> obtenerActividades(){
+    public List<Actividad> obtenerListaDeActividades(){
         return actividadService.obtenerListaDeActividades();
     }
 
