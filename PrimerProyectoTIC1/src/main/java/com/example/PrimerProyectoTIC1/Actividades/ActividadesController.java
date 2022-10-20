@@ -1,6 +1,7 @@
 package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.Actividades.ActividadService;
+import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,11 @@ public class ActividadesController {
     @GetMapping("/todas")
     public List<String> obtenerNombres(){
         return actividadService.obtenerListaDeActividadesPorNombre();
+    }
+    @GetMapping("/{nombre}/centros")
+    @ResponseBody
+    public List<String> obtenerNombreCentros(@PathVariable String nombre){
+        return actividadService.obtenerCentrosDeUnaActividad(nombre);
     }
 
 

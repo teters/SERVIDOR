@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,6 +39,17 @@ public class ActividadService {
     public List<String> obtenerListaDeActividadesPorNombre(){
         List<String> actividads=null;
         actividads=actividadRepository.findByNombreDistinct();
+        if(actividads.isEmpty()){
+            actividads.add("NO HAY ACTIVIDADES");
+        }
         return actividads;
+    }
+    public List<String> obtenerCentrosDeUnaActividad(String nombre){
+        List<CentroDeportivo1> centros=actividadRepository.findCentroDeportivo(nombre);
+        List<String> nombreCentros=new ArrayList<>();
+        for (int i = 0; i < centros.size(); i++) {
+            nombreCentros.add(centros.get(i).getNombre());
+        }
+        return nombreCentros;
     }
 }
