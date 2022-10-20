@@ -1,6 +1,7 @@
 package com.example.PrimerProyectoTIC1.Actividades;
 
 
+import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,9 @@ public interface ActividadRepository extends JpaRepository<Actividad, String> {
 
     @Query("select distinct a.nombre from Actividad a")
     List<String> findByNombreDistinct();
+
+    @Query("select distinct a.centroDeportivo1 from Actividad a where a.nombre=?1")
+    List<CentroDeportivo1> findCentroDeportivo(String nombre);
 
 
 
