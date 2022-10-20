@@ -13,7 +13,7 @@ public class Actividad {
     private Long ActividadId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "centroDeportivoID", nullable = false)
+    @JoinColumn(name = "centro_deportivo_1_id", nullable = false)
     private CentroDeportivo1 centroDeportivo1;
 
     @Column
