@@ -52,4 +52,8 @@ public class ActividadService {
         }
         return nombreCentros;
     }
+    public List<String> obtenerHorariosDeUnaActividad(String nombreDeAct){
+        List<String> horarios=actividadRepository.findHorarioByNombreDeActividad(nombreDeAct);
+        return horarios;
+    }
 }
