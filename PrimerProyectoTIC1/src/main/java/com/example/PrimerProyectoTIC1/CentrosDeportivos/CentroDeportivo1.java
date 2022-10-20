@@ -23,7 +23,7 @@ public class CentroDeportivo1 {
     private String direccion;
 
     @OneToMany(mappedBy = "centroDeportivo1")
-    @JoinColumn(name = "centroDeportivoID")
+    //@JoinColumn(name = "centroDeportivoID")
     private List<Actividad> actividads = new ArrayList<>();
 
     public List<Actividad> getActividads() {
