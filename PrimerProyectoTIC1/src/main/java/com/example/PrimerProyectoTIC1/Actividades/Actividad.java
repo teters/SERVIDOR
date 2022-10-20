@@ -17,7 +17,7 @@ public class Actividad {
     private CentroDeportivo1 centroDeportivo1;
 
     @Column
-    private DateTime horario;
+    private String horario;
     @Column
     private Integer cupos;
     @Column
@@ -37,7 +37,7 @@ public class Actividad {
     }
 
 
-    public Actividad(Long id, DateTime horario, Integer cupos, String nombre, Float precio, String imagen) {
+    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
@@ -56,11 +56,11 @@ public class Actividad {
         this.ActividadId = id;
     }
 
-    public DateTime getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(DateTime horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
