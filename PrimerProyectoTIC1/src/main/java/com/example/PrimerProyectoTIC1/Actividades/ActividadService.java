@@ -4,6 +4,7 @@ package com.example.PrimerProyectoTIC1.Actividades;
 import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.Actividades.ActividadRepository;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
+import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivoRepository;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ public class ActividadService {
 
     @Autowired
     ActividadRepository actividadRepository;
+    @Autowired
+    CentroDeportivoRepository centroDeportivoRepository;
     public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen){
         Actividad actividad =new Actividad();
         actividad.setHorario(horario);
@@ -55,5 +58,10 @@ public class ActividadService {
     public List<String> obtenerHorariosDeUnaActividad(String nombreDeAct){
         List<String> horarios=actividadRepository.findHorarioByNombreDeActividad(nombreDeAct);
         return horarios;
+    }
+    public List<String> obtenerHorariosActividadCentro(String nombreAct,String nombrecentro){
+        CentroDeportivo1 centro= centroDeportivoRepository.findByNombre(nombrecentro);
+        return actividadRepository.findHorarioByActividadCentro(nombreAct,centro);
+
     }
 }
