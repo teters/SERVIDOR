@@ -54,8 +54,11 @@ public class ActividadesController {
     public List<String> obtenerHorariosActividadCentro(@PathVariable String actividad,@PathVariable String centro){
         return actividadService.obtenerHorariosActividadCentro(actividad,centro);
     }
-    //@GetMapping("/{actividad}/{horario}/centro")
-    //@ResponseBody
+    @GetMapping("/{actividad}/{horario}/centro")
+    @ResponseBody
+    public List<String> obtenerCentrosAPartirDeHorarios(@PathVariable String actividad,@PathVariable String horario){
+        return actividadService.obtenerCentrosAPartirDeHorario(horario,actividad);
+    }
 
 
 

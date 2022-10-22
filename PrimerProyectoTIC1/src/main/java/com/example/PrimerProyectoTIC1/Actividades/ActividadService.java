@@ -19,7 +19,7 @@ public class ActividadService {
     ActividadRepository actividadRepository;
     @Autowired
     CentroDeportivoRepository centroDeportivoRepository;
-    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen){
+    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen){
         Actividad actividad =new Actividad();
         actividad.setHorario(horario);
         actividad.setCupos(cupos);
@@ -64,8 +64,12 @@ public class ActividadService {
         return actividadRepository.findHorarioByActividadCentro(nombreAct,centro);
 
     }
-
-    public byte[] obtenerImagen(String nombreActividad){
-        return actividadRepository.findImageByName(nombreActividad);
+    public List<String> obtenerCentrosAPartirDeHorario(String horario,String actividad){
+        List<CentroDeportivo1> centros=actividadRepository.findCentroByHorario(horario,actividad);
+        List<String> nombreCentros=new ArrayList<>();
+        for (int i = 0; i < centros.size(); i++) {
+            nombreCentros.add(centros.get(i).getNombre());
+        }
+        return nombreCentros;
     }
 }
