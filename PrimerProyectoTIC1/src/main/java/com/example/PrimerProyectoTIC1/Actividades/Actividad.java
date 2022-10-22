@@ -1,13 +1,21 @@
 package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
+import com.example.PrimerProyectoTIC1.Imagenes.Imagen;
+import jdk.dynalink.linker.LinkerServices;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
 public class Actividad {
+
+    @OneToMany
+    @JoinColumn(name = "actividadId")
+    List<Imagen> Imagenes;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ActividadId;
@@ -26,7 +34,8 @@ public class Actividad {
     private Float precio;
 
     @Column
-    private String imagen;
+    @Lob
+    private byte[] imagen;
 
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
@@ -37,7 +46,7 @@ public class Actividad {
     }
 
 
-    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen) {
+    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
@@ -88,11 +97,11 @@ public class Actividad {
         this.precio = precio;
     }
 
-    public String getImagen() {
+    public byte[] getImagen() {
         return imagen;
     }
 
-    public void setImagen(String imagen) {
+    public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
 }

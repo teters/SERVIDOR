@@ -19,7 +19,7 @@ public class ActividadService {
     ActividadRepository actividadRepository;
     @Autowired
     CentroDeportivoRepository centroDeportivoRepository;
-    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen){
+    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen){
         Actividad actividad =new Actividad();
         actividad.setHorario(horario);
         actividad.setCupos(cupos);
@@ -63,5 +63,9 @@ public class ActividadService {
         CentroDeportivo1 centro= centroDeportivoRepository.findByNombre(nombrecentro);
         return actividadRepository.findHorarioByActividadCentro(nombreAct,centro);
 
+    }
+
+    public byte[] obtenerImagen(String nombreActividad){
+        return actividadRepository.findImageByName(nombreActividad);
     }
 }
