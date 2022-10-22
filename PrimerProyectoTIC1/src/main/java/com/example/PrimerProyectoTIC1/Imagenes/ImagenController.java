@@ -17,7 +17,7 @@ public class ImagenController {
     @PostMapping
     public void guardarDatos (@RequestBody Imagen imagen){
         Long id = imagen.getId();
-        byte[] content = imagen.getContent();
+        String content = imagen.getContent();
         String name = imagen.getName();
         imagenService.agregarImagen(id, content, name);
     }

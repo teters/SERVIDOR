@@ -11,7 +11,7 @@ public class ImagenService {
     @Autowired
     ImagenRepository imagenRepository;
 
-    public void agregarImagen(Long id, byte[] content, String name){
+    public void agregarImagen(Long id, String content, String name){
         Imagen imagen = new Imagen();
         imagen.setContent(content);
         imagen.setName(name);
