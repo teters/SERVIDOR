@@ -64,4 +64,12 @@ public class ActividadService {
         return actividadRepository.findHorarioByActividadCentro(nombreAct,centro);
 
     }
+    public List<String> obtenerCentrosAPartirDeHorario(String horario,String actividad){
+        List<CentroDeportivo1> centros=actividadRepository.findCentroByHorario(horario,actividad);
+        List<String> nombreCentros=new ArrayList<>();
+        for (int i = 0; i < centros.size(); i++) {
+            nombreCentros.add(centros.get(i).getNombre());
+        }
+        return nombreCentros;
+    }
 }
