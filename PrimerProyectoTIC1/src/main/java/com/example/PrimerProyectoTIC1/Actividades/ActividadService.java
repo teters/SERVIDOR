@@ -19,13 +19,13 @@ public class ActividadService {
     ActividadRepository actividadRepository;
     @Autowired
     CentroDeportivoRepository centroDeportivoRepository;
-    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen){
+    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio){
         Actividad actividad =new Actividad();
         actividad.setHorario(horario);
         actividad.setCupos(cupos);
         actividad.setNombre(nombre);
         actividad.setPrecio(precio);
-        actividad.setImagen(imagen);
+        //actividad.setImagen(imagen);
         actividadRepository.save(actividad);
     }
     public List<Actividad> obtenerListaDeActividades(){
@@ -39,11 +39,12 @@ public class ActividadService {
         }
         return centros;
     }
-    public List<String> obtenerListaDeActividadesPorNombre(){
-        List<String> actividads=null;
-        actividads=actividadRepository.findByNombreDistinct();
+    public List<Actividad> obtenerListaDeActividadesPorNombre(){
+        List<Actividad> actividads=null;
+        actividads=actividadRepository.findAllActividades();
         if(actividads.isEmpty()){
-            actividads.add("NO HAY ACTIVIDADES");
+            CentroDeportivo1 centroDeportivo1=centroDeportivoRepository.findAll().get(0);
+            actividads.add(new Actividad(centroDeportivo1,".",2,"no",3F,true,"hay actividades o centros"));
         }
         return actividads;
     }
@@ -65,7 +66,7 @@ public class ActividadService {
 
     }
     public List<String> obtenerCentrosAPartirDeHorario(String horario,String actividad){
-        List<CentroDeportivo1> centros=actividadRepository.findCentroByHorario(horario,actividad);
+        List<CentroDeportivo1> centros=null;//actividadRepository.findCentroByHorario(horario,actividad);
         List<String> nombreCentros=new ArrayList<>();
         for (int i = 0; i < centros.size(); i++) {
             nombreCentros.add(centros.get(i).getNombre());

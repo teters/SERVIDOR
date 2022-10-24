@@ -12,9 +12,9 @@ import java.util.List;
 @Table
 public class Actividad {
 
-    @OneToMany
-    @JoinColumn(name = "actividadId")
-    List<Imagen> Imagenes;
+    //@OneToMany
+    //@JoinColumn(name = "actividadId")
+    //List<Imagen> Imagenes;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -33,12 +33,25 @@ public class Actividad {
     @Column
     private Float precio;
 
+    //@Column
+    //@Lob
+    //private byte[] imagen;
     @Column
-    @Lob
-    private byte[] imagen;
-
+    private Boolean reserva;
+    @Column
+    private String tipoActividad;
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
+    }
+
+    public Actividad(CentroDeportivo1 centroDeportivo1, String horario, Integer cupos, String nombre, Float precio, Boolean reserva, String tipoActividad) {
+        this.centroDeportivo1 = centroDeportivo1;
+        this.horario = horario;
+        this.cupos = cupos;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.reserva = reserva;
+        this.tipoActividad = tipoActividad;
     }
 
     public void setCentroDeportivo1(CentroDeportivo1 centroDeportivo1) {
@@ -52,7 +65,7 @@ public class Actividad {
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
-        this.imagen = imagen;
+        //this.imagen = imagen;
     }
 
     public Actividad() {}
@@ -97,11 +110,11 @@ public class Actividad {
         this.precio = precio;
     }
 
-    public byte[] getImagen() {
+    /*public byte[] getImagen() {
         return imagen;
     }
 
     public void setImagen(byte[] imagen) {
         this.imagen = imagen;
-    }
+    }*/
 }
