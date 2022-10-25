@@ -1,13 +1,21 @@
 package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
+import com.example.PrimerProyectoTIC1.Imagenes.Imagen;
+import jdk.dynalink.linker.LinkerServices;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
 public class Actividad {
+
+    //@OneToMany
+    //@JoinColumn(name = "actividadId")
+    //List<Imagen> Imagenes;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ActividadId;
@@ -25,11 +33,25 @@ public class Actividad {
     @Column
     private Float precio;
 
+    //@Column
+    //@Lob
+    //private byte[] imagen;
     @Column
-    private String imagen;
-
+    private Boolean reserva;
+    @Column
+    private String tipoActividad;
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
+    }
+
+    public Actividad(CentroDeportivo1 centroDeportivo1, String horario, Integer cupos, String nombre, Float precio, Boolean reserva, String tipoActividad) {
+        this.centroDeportivo1 = centroDeportivo1;
+        this.horario = horario;
+        this.cupos = cupos;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.reserva = reserva;
+        this.tipoActividad = tipoActividad;
     }
 
     public void setCentroDeportivo1(CentroDeportivo1 centroDeportivo1) {
@@ -37,13 +59,13 @@ public class Actividad {
     }
 
 
-    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen) {
+    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
-        this.imagen = imagen;
+        //this.imagen = imagen;
     }
 
     public Actividad() {}
@@ -88,11 +110,11 @@ public class Actividad {
         this.precio = precio;
     }
 
-    public String getImagen() {
+    /*public byte[] getImagen() {
         return imagen;
     }
 
-    public void setImagen(String imagen) {
+    public void setImagen(byte[] imagen) {
         this.imagen = imagen;
-    }
+    }*/
 }

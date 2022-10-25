@@ -14,14 +14,23 @@ public interface ActividadRepository extends JpaRepository<Actividad, String> {
     @Query("select a from Actividad a where a.nombre = ?1")
     List<Actividad> findByNombre(String nombre);
 
-    @Query("select distinct a.nombre from Actividad a")
-    List<String> findByNombreDistinct();
+    @Query("select a from Actividad a")
+    List<Actividad> findAllActividades();
 
     @Query("select distinct a.centroDeportivo1 from Actividad a where a.nombre=?1")
     List<CentroDeportivo1> findCentroDeportivo(String nombre);
 
+    @Query("select a.horario from Actividad a where a.nombre=?1")
+    List<String> findHorarioByNombreDeActividad(String nombre);
 
+    @Query("select a.horario from Actividad a where a.nombre=?1 and a.centroDeportivo1=?2")
+    List<String> findHorarioByActividadCentro(String actividad,CentroDeportivo1 centro);
 
+    //@Query("select distinct a.imagen from Actividad a where a.nombre=?1")
+    //byte[] findImageByName(String nombre);
+
+    @Query("select a from Actividad a where a.nombre=?1")
+    List<Actividad> findActividadByNombre(String nombre);
 
 
 }
