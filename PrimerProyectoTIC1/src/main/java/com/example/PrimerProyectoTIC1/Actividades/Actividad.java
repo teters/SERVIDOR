@@ -13,12 +13,12 @@ import java.util.List;
 public class Actividad {
 
     //@OneToMany
-    //@JoinColumn(name = "actividadId")
+    //@JoinColumn(name = "id")
     //List<Imagen> Imagenes;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long ActividadId;
+    private Long id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "centro_deportivo_1_id", nullable = false)
@@ -35,7 +35,7 @@ public class Actividad {
 
     //@Column
     //@Lob
-    //private byte[] imagen;
+    //private String imagen;
     @Column
     private Boolean reserva;
     @Column
@@ -59,23 +59,16 @@ public class Actividad {
     }
 
 
-    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen) {
-        this.ActividadId = id;
-        this.horario = horario;
-        this.cupos = cupos;
-        this.nombre = nombre;
-        this.precio = precio;
-        //this.imagen = imagen;
-    }
+
 
     public Actividad() {}
 
     public Long getId() {
-        return ActividadId;
+        return id;
     }
 
     public void setId(Long id) {
-        this.ActividadId = id;
+        this.id = id;
     }
 
     public String getHorario() {
@@ -110,11 +103,5 @@ public class Actividad {
         this.precio = precio;
     }
 
-    /*public byte[] getImagen() {
-        return imagen;
-    }
 
-    public void setImagen(byte[] imagen) {
-        this.imagen = imagen;
-    }*/
 }

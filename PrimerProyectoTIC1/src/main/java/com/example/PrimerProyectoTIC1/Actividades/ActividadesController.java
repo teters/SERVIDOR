@@ -27,7 +27,7 @@ public class ActividadesController {
         Integer cupos = actividad.getCupos();
         String nombre= actividad.getNombre();
         Float precio = actividad.getPrecio();
-        //byte[] imagen = actividad.getImagen();
+        //tring imagen = actividad.getImagen();
         actividadService.agregarActividad(id, horario, cupos, nombre, precio);
     }
     @GetMapping("/")
