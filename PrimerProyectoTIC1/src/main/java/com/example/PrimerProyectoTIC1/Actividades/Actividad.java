@@ -18,7 +18,7 @@ public class Actividad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long ActividadId;
+    private Long id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "centro_deportivo_1_id", nullable = false)
@@ -60,7 +60,7 @@ public class Actividad {
 
 
     public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen) {
-        this.ActividadId = id;
+        this.id = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
@@ -71,11 +71,11 @@ public class Actividad {
     public Actividad() {}
 
     public Long getId() {
-        return ActividadId;
+        return id;
     }
 
     public void setId(Long id) {
-        this.ActividadId = id;
+        this.id = id;
     }
 
     public String getHorario() {
