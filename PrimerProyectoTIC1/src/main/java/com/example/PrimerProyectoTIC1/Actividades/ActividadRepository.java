@@ -26,8 +26,8 @@ public interface ActividadRepository extends JpaRepository<Actividad, String> {
     @Query("select a.horario from Actividad a where a.nombre=?1 and a.centroDeportivo1=?2")
     List<String> findHorarioByActividadCentro(String actividad,CentroDeportivo1 centro);
 
-    @Query("select distinct a.imagen from Actividad a where a.nombre=?1")
-    byte[] findImageByName(String nombre);
+    //@Query("select distinct a.imagen from Actividad a where a.nombre=?1")
+    //byte[] findImageByName(String nombre);
 
     @Query("select a from Actividad a where a.nombre=?1")
     List<Actividad> findActividadByNombre(String nombre);
