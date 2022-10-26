@@ -35,7 +35,7 @@ public class Actividad {
 
     @Column
     @Lob
-    private byte[] imagen;
+    private String imagen;
     @Column
     private Boolean reserva;
     @Column
@@ -59,13 +59,13 @@ public class Actividad {
     }
 
 
-    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, byte[] imagen) {
+    public Actividad(Long id, String horario, Integer cupos, String nombre, Float precio, String imagen) {
         this.ActividadId = id;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
-        //this.imagen = imagen;
+        this.imagen = imagen;
     }
 
     public Actividad() {}
@@ -110,11 +110,11 @@ public class Actividad {
         this.precio = precio;
     }
 
-    public byte[] getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(byte[] imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 }
