@@ -2,6 +2,7 @@ package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.Actividades.ActividadService;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
+import com.example.PrimerProyectoTIC1.User.Empleado;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -58,6 +59,10 @@ public class ActividadesController {
     @ResponseBody
     public List<String> obtenerCentrosAPartirDeHorarios(@PathVariable String actividad,@PathVariable String horario){
         return actividadService.obtenerCentrosAPartirDeHorario(horario,actividad);
+    }
+    @PostMapping("/reservar")
+    public void hacerReserva(@RequestBody Actividad actividad, @RequestBody Empleado empleado){
+        actividadService.reservar(actividad,empleado);
     }
 
 

@@ -2,6 +2,7 @@ package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import com.example.PrimerProyectoTIC1.Imagenes.Imagen;
+import com.example.PrimerProyectoTIC1.User.Empleado;
 import jdk.dynalink.linker.LinkerServices;
 import org.joda.time.DateTime;
 
@@ -40,9 +41,14 @@ public class Actividad {
     private Boolean reserva;
     @Column
     private String tipoActividad;
+    @Transient
+    private List<Empleado> reservas;
+
+
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
     }
+
 
     public Actividad(CentroDeportivo1 centroDeportivo1, String horario, Integer cupos, String nombre, Float precio, Boolean reserva, String tipoActividad) {
         this.centroDeportivo1 = centroDeportivo1;
@@ -103,5 +109,27 @@ public class Actividad {
         this.precio = precio;
     }
 
+    public Boolean getReserva() {
+        return reserva;
+    }
 
+    public void setReserva(Boolean reserva) {
+        this.reserva = reserva;
+    }
+
+    public String getTipoActividad() {
+        return tipoActividad;
+    }
+
+    public void setTipoActividad(String tipoActividad) {
+        this.tipoActividad = tipoActividad;
+    }
+
+    public List<Empleado> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Empleado> reservas) {
+        this.reservas = reservas;
+    }
 }

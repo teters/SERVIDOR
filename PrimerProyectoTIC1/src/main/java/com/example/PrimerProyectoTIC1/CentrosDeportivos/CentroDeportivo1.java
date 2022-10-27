@@ -24,13 +24,13 @@ public class CentroDeportivo1 {
 
     //@OneToMany(mappedBy = "centroDeportivo1")
     //@JoinColumn(name = "centroDeportivoID")
-    //private List<Actividad> actividads = new ArrayList<>();
+    //private List<Actividad> actividads=new ArrayList<>();
 
-    //public List<Actividad> getActividads() {
-        //return actividads;
-    //}
+    /*public List<Actividad> getActividads() {
+        return actividads;
+    }
 
-    /*public void setActividads(List<Actividad> actividads) {
+    public void setActividads(List<Actividad> actividads) {
         this.actividads = actividads;
     }*/
 
