@@ -3,6 +3,7 @@ package com.example.PrimerProyectoTIC1.Actividades;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import com.example.PrimerProyectoTIC1.Imagenes.Imagen;
 import com.example.PrimerProyectoTIC1.User.Empleado;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.dynalink.linker.LinkerServices;
 import org.joda.time.DateTime;
 
@@ -42,6 +43,7 @@ public class Actividad {
     @Column
     private String tipoActividad;
     @Transient
+    @JsonIgnore
     private List<Empleado> reservas;
 
 

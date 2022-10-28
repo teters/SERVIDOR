@@ -23,13 +23,7 @@ public class ActividadesController {
 
     @PostMapping("/")
     public void guardarDatos(@RequestBody Actividad actividad){
-        Long id= actividad.getId();
-        String horario= actividad.getHorario();
-        Integer cupos = actividad.getCupos();
-        String nombre= actividad.getNombre();
-        Float precio = actividad.getPrecio();
-        //tring imagen = actividad.getImagen();
-        actividadService.agregarActividad(id, horario, cupos, nombre, precio);
+        actividadService.agregarActividad(actividad);
     }
     @GetMapping("/")
     public List<Actividad> obtenerListaDeActividades(){

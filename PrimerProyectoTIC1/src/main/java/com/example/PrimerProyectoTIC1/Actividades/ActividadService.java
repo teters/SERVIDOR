@@ -20,13 +20,7 @@ public class ActividadService {
     ActividadRepository actividadRepository;
     @Autowired
     CentroDeportivoRepository centroDeportivoRepository;
-    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio){
-        Actividad actividad =new Actividad();
-        actividad.setHorario(horario);
-        actividad.setCupos(cupos);
-        actividad.setNombre(nombre);
-        actividad.setPrecio(precio);
-        //actividad.setImagen(imagen);
+    public void agregarActividad(Actividad actividad){
         actividadRepository.save(actividad);
     }
     public List<Actividad> obtenerListaDeActividades(){

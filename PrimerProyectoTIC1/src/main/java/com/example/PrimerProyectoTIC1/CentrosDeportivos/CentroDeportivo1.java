@@ -22,9 +22,9 @@ public class CentroDeportivo1 {
     @Column(unique = true)
     private String direccion;
 
-    //@OneToMany(mappedBy = "centroDeportivo1")
+    @OneToMany(mappedBy = "centroDeportivo1")
     //@JoinColumn(name = "centroDeportivoID")
-    //private List<Actividad> actividads=new ArrayList<>();
+    private List<Actividad> actividads=new ArrayList<>();
 
     /*public List<Actividad> getActividads() {
         return actividads;
