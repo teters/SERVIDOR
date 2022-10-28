@@ -21,4 +21,5 @@ public class CentroDeportivoController1 {
         return centroDeportivoService.obtenerListaDeCentrosDeportivos();
     }
 
+
 }

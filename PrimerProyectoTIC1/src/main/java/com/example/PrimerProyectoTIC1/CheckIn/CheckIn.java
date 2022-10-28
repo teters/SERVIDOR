@@ -1,16 +1,15 @@
-package com.example.PrimerProyectoTIC1.Reservas;
+package com.example.PrimerProyectoTIC1.CheckIn;
 
 import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.User.Empleado;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table
 
-public class Reserva {
+public class CheckIn {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "EmpleadoId")
@@ -27,13 +26,29 @@ public class Reserva {
     @Column
     private DateTime hora;
 
-    public Reserva(Long id, DateTime hora) {
+    public CheckIn(Long id, DateTime hora) {
         this.id = id;
         this.hora = hora;
     }
 
-    public Reserva() {
+    public CheckIn() {
 
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public Actividad getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(Actividad actividad) {
+        this.actividad = actividad;
     }
 
     public Long getId() {

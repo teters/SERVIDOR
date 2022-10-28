@@ -5,6 +5,7 @@ import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.Actividades.ActividadRepository;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivoRepository;
+import com.example.PrimerProyectoTIC1.User.Empleado;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -72,5 +73,10 @@ public class ActividadService {
             nombreCentros.add(centros.get(i).getNombre());
         }
         return nombreCentros;
+    }
+    public void reservar(Actividad actividad, Empleado empleado) {
+        List<Empleado> reservas = actividad.getReservas();
+        reservas.add(empleado);
+        actividad.setReservas(reservas);
     }
 }
