@@ -20,13 +20,18 @@ public class ActividadService {
     ActividadRepository actividadRepository;
     @Autowired
     CentroDeportivoRepository centroDeportivoRepository;
-    public void agregarActividad(Long id, String horario, Integer cupos, String nombre, Float precio){
+    public void agregarActividad(Long id, CentroDeportivo1 centroDep, String horario, String dia, Integer cupos, String nombre, Float precio, Boolean reserva, String tipo, String descripcion){
         Actividad actividad =new Actividad();
+        actividad.setCentroDeportivo1(centroDep);
         actividad.setHorario(horario);
+        actividad.setDia(dia);
         actividad.setCupos(cupos);
         actividad.setNombre(nombre);
         actividad.setPrecio(precio);
         //actividad.setImagen(imagen);
+        actividad.setReserva(reserva);
+        actividad.setTipoActividad(tipo);
+        actividad.setDescripcion(descripcion);
         actividadRepository.save(actividad);
     }
     public List<Actividad> obtenerListaDeActividades(){
@@ -45,7 +50,7 @@ public class ActividadService {
         actividads=actividadRepository.findAllActividades();
         if(actividads.isEmpty()){
             CentroDeportivo1 centroDeportivo1=centroDeportivoRepository.findAll().get(0);
-            actividads.add(new Actividad(centroDeportivo1,".",2,"no",3F,true,"hay actividades o centros"));
+            actividads.add(new Actividad(centroDeportivo1,".",2,"no",3F,true,"hay actividades o centros","", ""));
         }
         return actividads;
     }

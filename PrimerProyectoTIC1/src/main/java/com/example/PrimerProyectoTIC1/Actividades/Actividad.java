@@ -27,6 +27,10 @@ public class Actividad {
 
     @Column
     private String horario;
+
+     @Column
+    private String dia;
+
     @Column
     private Integer cupos;
     @Column
@@ -41,8 +45,11 @@ public class Actividad {
     private Boolean reserva;
     @Column
     private String tipoActividad;
+    @Column String descripcion;
     @Transient
     private List<Empleado> reservas;
+
+
 
 
     public CentroDeportivo1 getCentroDeportivo1() {
@@ -50,12 +57,14 @@ public class Actividad {
     }
 
 
-    public Actividad(CentroDeportivo1 centroDeportivo1, String horario, Integer cupos, String nombre, Float precio, Boolean reserva, String tipoActividad) {
+    public Actividad(CentroDeportivo1 centroDeportivo1, String horario, Integer cupos, String nombre, Float precio, Boolean reserva, String tipoActividad,String descripcion, String dia) {
         this.centroDeportivo1 = centroDeportivo1;
         this.horario = horario;
         this.cupos = cupos;
         this.nombre = nombre;
         this.precio = precio;
+        this.descripcion = descripcion;
+        this.dia = dia;
         this.reserva = reserva;
         this.tipoActividad = tipoActividad;
     }
@@ -132,4 +141,21 @@ public class Actividad {
     public void setReservas(List<Empleado> reservas) {
         this.reservas = reservas;
     }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }
+
