@@ -12,4 +12,7 @@ import java.util.List;
 public interface CentroDeportivoRepository extends JpaRepository<CentroDeportivo1, String>{
     @Query("select c from CentroDeportivo1 c where c.nombre = ?1")
     CentroDeportivo1 findByNombre(String nombre);
+
+
+
 }
