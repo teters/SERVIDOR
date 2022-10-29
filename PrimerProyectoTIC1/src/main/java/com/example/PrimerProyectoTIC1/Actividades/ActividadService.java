@@ -39,7 +39,7 @@ public class ActividadService {
         actividads=actividadRepository.findAllActividades();
         if(actividads.isEmpty()){
             CentroDeportivo1 centroDeportivo1=centroDeportivoRepository.findAll().get(0);
-            actividads.add(new Actividad(centroDeportivo1,".",2,"no",3F,true,"hay actividades o centros"));
+            actividads.add(new Actividad(centroDeportivo1,".",2,"no",3F,true,"hay actividades o centros", "", ""));
         }
         return actividads;
     }
