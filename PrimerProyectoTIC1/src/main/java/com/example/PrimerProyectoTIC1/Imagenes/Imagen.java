@@ -1,11 +1,9 @@
 package com.example.PrimerProyectoTIC1.Imagenes;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 
 @Entity
+@Table(name= "imagenes")
 public class Imagen {
 
     @Id
@@ -13,14 +11,20 @@ public class Imagen {
     Long id;
 
     @Lob
-    String content;
+    byte[] content;
 
-    String name;
+    @Column
+    String nombreActividad;
 
-    public Imagen(Long id, String content, String name) {
+    public Imagen(byte[] content, String name) {
+        this.content = content;
+        this.nombreActividad = name;
+    }
+
+    public Imagen(Long id, byte[] content, String name) {
         this.id = id;
         this.content = content;
-        this.name = name;
+        this.nombreActividad = name;
     }
 
     public Imagen() {
@@ -35,19 +39,19 @@ public class Imagen {
         this.id = id;
     }
 
-    public String getContent() {
+    public byte[] getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(byte[] content) {
         this.content = content;
     }
 
     public String getName() {
-        return name;
+        return nombreActividad;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombreActividad = name;
     }
 }
