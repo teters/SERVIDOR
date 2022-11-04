@@ -1,7 +1,10 @@
 package com.example.PrimerProyectoTIC1.Reserva;
 
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name="reservas")
@@ -10,17 +13,16 @@ public class Reserva {
     @GeneratedValue
     Long id;
 
-    @Column
     private Long empleadoId;
 
-    @Column
+
     private Long centroId;
 
     @Column
-    private LocalDate fecha;
+    private LocalDate fechaReserva;
 
     @Column
-    private String hora;
+    private String horaAct;
 
     @Column
     private String dia;
@@ -30,11 +32,11 @@ public class Reserva {
 
     public Reserva() {}
 
-    public Reserva(Long empleadoId, Long centroId, String fecha, String hora, String dia /*, String fechaReserva*/) {
+    public Reserva(Long empleadoId, Long centroId, LocalDate fecha, String hora, String dia /*, String fechaReserva*/) {
         this.empleadoId = empleadoId;
         this.centroId = centroId;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fechaReserva = fecha;
+        this.horaAct = hora;
         this.dia = dia;
         //this.fechaReserva = fechaReserva;
     }
@@ -55,20 +57,20 @@ public class Reserva {
         this.centroId = centroId;
     }
 
-    public String getFecha() {
-        return fecha;
+    public LocalDate getFecha() {
+        return fechaReserva;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFecha(LocalDate fecha) {
+        this.fechaReserva = fecha;
     }
 
     public String getHora() {
-        return hora;
+        return horaAct;
     }
 
     public void setHora(String hora) {
-        this.hora = hora;
+        this.horaAct = hora;
     }
 
     public String getDia() {

@@ -29,13 +29,13 @@ public class CentroDeportivo1 {
     //@JoinColumn(name = "centroDeportivoID")
     private List<Actividad> actividads=new ArrayList<>();
 
-    /*public List<Actividad> getActividads() {
+    public List<Actividad> getActividads() {
         return actividads;
     }
 
     public void setActividads(List<Actividad> actividads) {
         this.actividads = actividads;
-    }*/
+    }
 
     public CentroDeportivo1() {
     }

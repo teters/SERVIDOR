@@ -10,11 +10,12 @@ public class BossCDService {
     @Autowired
     BossCDRepository bossCDRepository;
     public BossCD1 obtenerBossConMail(String mail, String password){
-        //BossCD1 boss=bossCDRepository.findByMail(mail);
-        //if(boss.getPassword().equals(password)){
-            //return boss;
-        //}else {
-        return null;
+        BossCD1 boss=bossCDRepository.findByMail(mail);
+        if(boss.getPassword().equals(password)){
+            return boss;
+        }else {
+            return null;
+        }
 
     }
 }
