@@ -1,6 +1,7 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
 import com.example.PrimerProyectoTIC1.Actividades.Actividad;
+import com.example.PrimerProyectoTIC1.Reserva.Reserva;
 import com.example.PrimerProyectoTIC1.User.Empleado;
 
 import javax.persistence.*;
@@ -12,7 +13,9 @@ import java.util.Set;
 @Table(name="centrodeportivo")
 public class CentroDeportivo1 {
 
-
+    @OneToMany
+    @JoinColumn(name="centroId")
+    List<Reserva> Reservas;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
