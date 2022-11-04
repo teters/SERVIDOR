@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/centrodeportivo")
 public class CentroDeportivoController1 {
+
     @Autowired
     CentroDeportivoService centroDeportivoService;
     @PostMapping( "/")

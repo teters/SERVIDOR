@@ -3,6 +3,7 @@ package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.Reserva.Reserva;
 import com.example.PrimerProyectoTIC1.User.Empleado;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class CentroDeportivo1 {
 
     @OneToMany(mappedBy = "centroDeportivo1")
     //@JoinColumn(name = "centroDeportivoID")
+    @JsonManagedReference
     private List<Actividad> actividads=new ArrayList<>();
 
     public List<Actividad> getActividads() {
@@ -68,5 +70,13 @@ public class CentroDeportivo1 {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public List<Reserva> getReservas() {
+        return Reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        Reservas = reservas;
     }
 }

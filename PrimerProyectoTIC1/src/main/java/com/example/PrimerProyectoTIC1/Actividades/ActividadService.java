@@ -68,5 +68,12 @@ public class ActividadService {
         }
         return nombreCentros;
     }
+    public Actividad obtenerActividadPorId(Long id){
+        return actividadRepository.findById(id);
+
+    }
+    public void updatearCupos(Actividad actividad){
+
+    }
 
 }

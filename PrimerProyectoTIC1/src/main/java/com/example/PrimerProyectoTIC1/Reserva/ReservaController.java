@@ -12,8 +12,9 @@ public class ReservaController {
     ReservaService reservaService;
     @PostMapping("/")
     public void guardarReserva(@RequestBody Reserva reserva){
-
-        reservaService.agregarReserva(reserva);
+        if(reservaService.validarPorCupos(reserva)){
+            reservaService.agregarReserva(reserva);
+        }
     }
     @GetMapping("/{mail}/")
     @ResponseBody
