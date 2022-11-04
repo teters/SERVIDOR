@@ -54,10 +54,8 @@ public class ActividadesController {
     public List<String> obtenerCentrosAPartirDeHorarios(@PathVariable String actividad,@PathVariable String horario){
         return actividadService.obtenerCentrosAPartirDeHorario(horario,actividad);
     }
-    @PostMapping("/reservar")
-    public void hacerReserva(@RequestBody Actividad actividad, @RequestBody Empleado empleado){
-        actividadService.reservar(actividad,empleado);
-    }
+
+
 
 
 

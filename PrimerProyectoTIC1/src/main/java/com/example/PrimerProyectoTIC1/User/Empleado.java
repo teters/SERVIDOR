@@ -1,16 +1,22 @@
 package com.example.PrimerProyectoTIC1.User;
 
 import com.example.PrimerProyectoTIC1.Empresas.Empresa1;
+import com.example.PrimerProyectoTIC1.Reserva.Reserva;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-
+import java.util.List;
 
 
 @Entity
 @Table(name = "empleados")
 
 public class Empleado extends User1{
+
+    @OneToMany
+    @JoinColumn(name = "empleadoId")
+    private List<Reserva> Reservas;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

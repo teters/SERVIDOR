@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ImagenRepository extends JpaRepository<Imagen, String> {
+public interface ImagenRepository extends JpaRepository<Imagen, Long> {
     @Query("select i.content from Imagen i where i.nombreActividad=?1")
     public List<byte[]> findContentByNombreActividad(String nombreActividad);
 }

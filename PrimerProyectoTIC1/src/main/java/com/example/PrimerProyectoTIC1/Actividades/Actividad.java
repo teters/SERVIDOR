@@ -47,9 +47,7 @@ public class Actividad {
     @Column
     private String tipoActividad;
     @Column String descripcion;
-    @Transient
-    @JsonIgnore
-    private List<Empleado> reservas;
+
 
 
 
@@ -136,13 +134,9 @@ public class Actividad {
         this.tipoActividad = tipoActividad;
     }
 
-    public List<Empleado> getReservas() {
-        return reservas;
-    }
 
-    public void setReservas(List<Empleado> reservas) {
-        this.reservas = reservas;
-    }
+
+
 
     public String getDia() {
         return dia;
