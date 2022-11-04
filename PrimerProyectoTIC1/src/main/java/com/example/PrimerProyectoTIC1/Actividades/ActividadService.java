@@ -68,9 +68,5 @@ public class ActividadService {
         }
         return nombreCentros;
     }
-    public void reservar(Actividad actividad, Empleado empleado) {
-        List<Empleado> reservas = actividad.getReservas();
-        reservas.add(empleado);
-        actividad.setReservas(reservas);
-    }
+
 }
