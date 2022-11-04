@@ -35,6 +35,21 @@ public class EmpleadoService {
         }
 
     }
+    public Empleado obtenerEmpleadoPorMailsolamente( String mail){
+        Empleado empleadoGenerico=new Empleado("error",10L,"contra","incorrecta",".",1L,1L);
+        List<Empleado> empleados=repository.findAll();
+        Empleado empleado=empleadoGenerico;
+        for (int i = 0; i < empleados.size(); i++) {
+            if(empleados.get(i).getMail().equals(mail)){
+                empleado=empleados.get(i);
+            }
+
+        }
+        return empleado;
+
+    }
+
+
         /*Empleado empleado=new Empleado(nombre,tel,mail,fechaVen,password,saldo);
         Boolean chequeo=false;
         repository.countByNombre(nombre);

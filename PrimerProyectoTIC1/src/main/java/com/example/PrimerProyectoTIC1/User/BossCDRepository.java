@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BossCDRepository extends JpaRepository<BossCD1,Long> {
-    //@Query("select b from boss_centro_deportivo b where b.mail=?1")
-    //BossCD1 findByMail(String mail);
+    @Query("select b from BossCD1 b where b.mail=?1")
+    BossCD1 findByMail(String mail);
 }

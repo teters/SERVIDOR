@@ -14,9 +14,6 @@ public class Reserva {
     private Long empleadoId;
 
     @Column
-    private Long actividadId;
-
-    @Column
     private Long centroId;
 
     @Column
@@ -33,9 +30,8 @@ public class Reserva {
 
     public Reserva() {}
 
-    public Reserva(Long empleadoId, Long actividadId, Long centroId, LocalDate fecha, String hora, String dia /*, String fechaReserva*/) {
+    public Reserva(Long empleadoId, Long centroId, String fecha, String hora, String dia /*, String fechaReserva*/) {
         this.empleadoId = empleadoId;
-        this.actividadId = actividadId;
         this.centroId = centroId;
         this.fecha = fecha;
         this.hora = hora;
@@ -51,14 +47,6 @@ public class Reserva {
         this.empleadoId = empleadoId;
     }
 
-    public Long getActividadId() {
-        return actividadId;
-    }
-
-    public void setActividadId(Long actividadId) {
-        this.actividadId = actividadId;
-    }
-
     public Long getCentroId() {
         return centroId;
     }
@@ -67,11 +55,11 @@ public class Reserva {
         this.centroId = centroId;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
