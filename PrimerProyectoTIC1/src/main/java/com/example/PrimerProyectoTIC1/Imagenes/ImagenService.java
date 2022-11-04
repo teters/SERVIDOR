@@ -5,17 +5,19 @@ import com.example.PrimerProyectoTIC1.Actividades.ActividadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ImagenService {
 
     @Autowired
     ImagenRepository imagenRepository;
 
-    public void agregarImagen(Long id, String content, String name){
-        Imagen imagen = new Imagen();
-        imagen.setContent(content);
-        imagen.setName(name);
+    public void agregarImagen(Imagen imagen){
         imagenRepository.save(imagen);
+    }
+    public List<byte[]> buscarImagenes(String nombreactividad){
+        return imagenRepository.findContentByNombreActividad(nombreactividad);
     }
 
 }
