@@ -31,7 +31,8 @@ public class ActividadesController {
     }
     @GetMapping("/todas")
     public List<Actividad> obtenerNombres(){
-        return actividadService.obtenerListaDeActividadesPorNombre();
+        List<Actividad> toReturn=actividadService.obtenerListaDeActividadesPorNombre();
+        return toReturn;
     }
     @GetMapping("/{nombre}/centros")
     @ResponseBody
