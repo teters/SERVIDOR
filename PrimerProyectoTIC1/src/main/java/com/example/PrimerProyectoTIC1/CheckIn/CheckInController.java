@@ -18,7 +18,8 @@ public class CheckInController {
     @PostMapping("/")
     public void hacerCheckIn(@RequestBody CheckIn checkIn){//validar si existe, descontar saldo
         Boolean estaVencido=checkInService.validarCarneDeSalud(checkIn.getEmpleado());
-        Boolean hayCuposDisponibles=checkInService.validarPorCupos(checkIn.getActividad());
+
+
         checkInService.agregarReserva(checkIn);
     }
 

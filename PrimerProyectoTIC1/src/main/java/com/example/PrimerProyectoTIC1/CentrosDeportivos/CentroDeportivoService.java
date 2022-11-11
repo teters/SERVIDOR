@@ -18,6 +18,7 @@ public class CentroDeportivoService {
         cd1.setDireccion(direccion);
         centroDeportivoRepository.save(cd1);
     }
+
     public List<CentroDeportivo1> obtenerListaDeCentrosDeportivos(){
         return centroDeportivoRepository.findAll();
     }

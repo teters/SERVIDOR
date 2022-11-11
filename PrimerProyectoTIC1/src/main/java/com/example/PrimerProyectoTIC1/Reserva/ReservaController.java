@@ -11,10 +11,12 @@ public class ReservaController {
     @Autowired
     ReservaService reservaService;
     @PostMapping("/")
-    public void guardarReserva(@RequestBody Reserva reserva){
+    public Boolean guardarReserva(@RequestBody Reserva reserva){
         if(reservaService.validarPorCupos(reserva)){
             reservaService.agregarReserva(reserva);
+            return false;
         }
+        return true;
     }
     @GetMapping("/{mail}/")
     @ResponseBody
