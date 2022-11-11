@@ -28,7 +28,7 @@ public class EmpleadoController {
         String mail= empleado.getMail();
         String password=empleado.getPassword();
         Long tel= empleado.getTelefono();
-        Long saldo=empleado.getSaldo();
+        Float saldo=empleado.getSaldo();
         String fechaVenc=empleado.getFechaVenc();
         Long empresaId=empleado.getEmpresaID();
         empleadoService.crearEmpleado(nombre,tel,mail,fechaVenc,password,saldo,empresaId);
