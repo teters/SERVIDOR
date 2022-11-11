@@ -12,4 +12,13 @@ public class BossCD1 extends User1 {
     @OneToOne(cascade = CascadeType.ALL) //para que se persistan las instancias referenciadas
     @JoinColumn(name = "id_centrodep")
     private CentroDeportivo1 centroDepor;
+
+    public BossCD1(String nombre, Long telefono, String mail, String password, CentroDeportivo1 centroDepor) {
+        super(nombre, telefono, mail, password);
+        this.centroDepor = centroDepor;
+    }
+
+    public CentroDeportivo1 getCentroDepor() {
+        return centroDepor;
+    }
 }

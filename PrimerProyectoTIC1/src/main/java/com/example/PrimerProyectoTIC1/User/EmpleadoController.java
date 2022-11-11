@@ -10,14 +10,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/empleado")
 public class EmpleadoController {
+    private Empleado empleadoLogin;
     @Autowired
     EmpleadoService empleadoService;
     @PostMapping ("/iniciosesion")
     public Empleado login(@RequestBody UsuarioLogin empleado){
         String mail= empleado.getMail();
         String password=empleado.getPassword();
-
-        return empleadoService.obtenerEmpleadoPorMail(mail,password);
+        Empleado empleado1=empleadoService.obtenerEmpleadoPorMail(mail,password);
+        empleadoLogin=empleado1;
+        return empleado1;
 
     }
     @PostMapping("/")
@@ -34,5 +36,17 @@ public class EmpleadoController {
     @GetMapping("/")
     public List<Empleado> obtenerListaDeEmpleados(){
         return empleadoService.getListaDeEmpleados();
+    }
+
+    public Empleado getEmpleadoLogin() {
+        return empleadoLogin;
+    }
+    @GetMapping("/getEmpleadoInicio")
+    public Empleado obtenerEmpleadoInicio(){
+        return empleadoLogin;
+    }
+
+    public void setEmpleadoLogin(Empleado empleadoLogin) {
+        this.empleadoLogin = empleadoLogin;
     }
 }

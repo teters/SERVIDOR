@@ -5,6 +5,7 @@ import com.example.PrimerProyectoTIC1.User.Empleado;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -24,9 +25,9 @@ public class CheckIn {
 //    @Column
 //    private LocalDate fecha;
     @Column
-    private DateTime hora;
+    private LocalDateTime hora;
 
-    public CheckIn(Long id, DateTime hora) {
+    public CheckIn(Long id, LocalDateTime hora) {
         this.id = id;
         this.hora = hora;
     }
@@ -59,11 +60,11 @@ public class CheckIn {
         this.id = id;
     }
 
-    public DateTime getHora() {
+    public LocalDateTime getHora() {
         return hora;
     }
 
-    public void setHora(DateTime hora) {
+    public void setHora(LocalDateTime hora) {
         this.hora = hora;
     }
 }

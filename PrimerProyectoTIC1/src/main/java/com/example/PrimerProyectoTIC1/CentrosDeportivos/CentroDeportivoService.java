@@ -1,6 +1,7 @@
 package com.example.PrimerProyectoTIC1.CentrosDeportivos;
 
 
+import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,8 @@ public class CentroDeportivoService {
     }
     public List<CentroDeportivo1> obtenerListaDeCentrosDeportivos(){
         return centroDeportivoRepository.findAll();
+    }
+    public List<Actividad> getActivities(CentroDeportivo1 centro){
+        return centro.getActividads();
     }
 }

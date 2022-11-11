@@ -2,7 +2,9 @@ package com.example.PrimerProyectoTIC1.Actividades;
 
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import com.example.PrimerProyectoTIC1.Imagenes.Imagen;
+import com.example.PrimerProyectoTIC1.Reserva.Reserva;
 import com.example.PrimerProyectoTIC1.User.Empleado;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.dynalink.linker.LinkerServices;
 import org.joda.time.DateTime;
@@ -14,9 +16,9 @@ import java.util.List;
 @Table
 public class Actividad {
 
-    //@OneToMany
-    //@JoinColumn(name = "id")
-    //List<Imagen> Imagenes;
+    @OneToMany
+    @JoinColumn(name = "ActividadId")
+    List<Reserva> Reservas;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,6 +26,7 @@ public class Actividad {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "centro_deportivo_1_id", nullable = false)
+    @JsonBackReference
     private CentroDeportivo1 centroDeportivo1;
 
     @Column
@@ -48,9 +51,14 @@ public class Actividad {
     private String tipoActividad;
     @Column String descripcion;
 
+    public List<Reserva> getReservas() {
+        return Reservas;
+    }
 
 
-
+    public void setReservas(List<Reserva> reservas) {
+        Reservas = reservas;
+    }
 
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
