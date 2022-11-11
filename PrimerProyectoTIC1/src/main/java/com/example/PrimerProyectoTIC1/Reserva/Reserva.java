@@ -20,7 +20,7 @@ public class Reserva {
     private Long centroId;
 
     @Column
-    private LocalDate fecha;
+    private String fecha;
 
     @Column
     private String hora;
@@ -33,7 +33,7 @@ public class Reserva {
 
     public Reserva() {}
 
-    public Reserva(Long empleadoId, Long actividadId, Long centroId, LocalDate fecha, String hora, String dia /*, String fechaReserva*/) {
+    public Reserva(Long empleadoId, Long actividadId, Long centroId, String fecha, String hora, String dia /*, String fechaReserva*/) {
         this.empleadoId = empleadoId;
         this.actividadId = actividadId;
         this.centroId = centroId;
@@ -67,11 +67,11 @@ public class Reserva {
         this.centroId = centroId;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

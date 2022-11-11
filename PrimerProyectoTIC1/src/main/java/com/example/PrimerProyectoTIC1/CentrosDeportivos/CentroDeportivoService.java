@@ -24,4 +24,7 @@ public class CentroDeportivoService {
     public List<Actividad> getActivities(CentroDeportivo1 centro){
         return centro.getActividads();
     }
+    public CentroDeportivo1 getCentroById(Long id){
+        return centroDeportivoRepository.findById(id);
+    }
 }

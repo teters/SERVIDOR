@@ -15,12 +15,12 @@ import java.util.Set;
 public class CentroDeportivo1 {
 
     @OneToMany
-    @JoinColumn(name="centroId")
-    List<Reserva> Reservas;
+    @JoinColumn(name="CentroId")
+    List<Reserva> reservas;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long centro_id;
     @Column
     private String nombre;
     @Column(unique = true)
@@ -43,17 +43,17 @@ public class CentroDeportivo1 {
     }
 
     public CentroDeportivo1(Long id, String nombre, String direccion) {
-        this.id = id;
+        this.centro_id = id;
         this.nombre = nombre;
         this.direccion = direccion;
     }
 
     public Long getId() {
-        return id;
+        return centro_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.centro_id = id;
     }
 
     public String getNombre() {
@@ -73,10 +73,10 @@ public class CentroDeportivo1 {
     }
 
     public List<Reserva> getReservas() {
-        return Reservas;
+        return reservas;
     }
 
     public void setReservas(List<Reserva> reservas) {
-        Reservas = reservas;
+        this.reservas = reservas;
     }
 }
