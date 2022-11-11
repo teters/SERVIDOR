@@ -28,10 +28,10 @@ public class CheckInController {
         String contra = checkIn.getEmpleado().getPassword();
         if(! estaVencido){
             empleadoService.descontarSaldo(mail, contra, precio);
+            checkInService.agregarReserva(checkIn);
         }
 
 
-        checkInService.agregarReserva(checkIn);
     }
 
 }
