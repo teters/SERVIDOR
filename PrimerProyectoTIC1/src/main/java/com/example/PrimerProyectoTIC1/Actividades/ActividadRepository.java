@@ -11,8 +11,8 @@ import java.util.ListResourceBundle;
 
 @Repository
 public interface ActividadRepository extends JpaRepository<Actividad, String> {
-    @Query("select a from Actividad a where a.nombre = ?1")
-    List<Actividad> findByNombre(String nombre);
+    @Query("select distinct a from Actividad a where a.nombre = ?1")
+    Actividad findByNombre(String nombre);
 
     @Query("select a from Actividad a")
     List<Actividad> findAllActividades();

@@ -22,10 +22,11 @@ public class CentroDeportivoService {
     public List<CentroDeportivo1> obtenerListaDeCentrosDeportivos(){
         return centroDeportivoRepository.findAll();
     }
-    public List<Actividad> getActivities(CentroDeportivo1 centro){
+    public List<Actividad> getActivities(Long centroid){
+        CentroDeportivo1 centro=centroDeportivoRepository.findById(centroid).get();
         return centro.getActividads();
     }
-    public CentroDeportivo1 getCentroById(Long id){
-        return centroDeportivoRepository.findById(id);
+    public String getCentroById(Long id){
+        return centroDeportivoRepository.findById(id).get().getNombre();
     }
 }

@@ -45,6 +45,11 @@ public class EmpleadoController {
     public Empleado obtenerEmpleadoInicio(){
         return empleadoLogin;
     }
+    @GetMapping("/{mail}/")
+    @ResponseBody
+    public Empleado obtenerEmpleadoConMail(@PathVariable String mail){
+        return empleadoService.obtenerEmpleadoPorMailsolamente(mail);
+    }
 
     public void setEmpleadoLogin(Empleado empleadoLogin) {
         this.empleadoLogin = empleadoLogin;

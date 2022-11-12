@@ -75,5 +75,8 @@ public class ActividadService {
     public void updatearCupos(Actividad actividad){
 
     }
+    public Actividad obtenerActividadConNombre(String nombre){
+        return actividadRepository.findByNombre(nombre);
+    }
 
 }

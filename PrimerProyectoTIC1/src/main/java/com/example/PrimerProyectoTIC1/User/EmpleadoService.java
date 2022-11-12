@@ -49,6 +49,9 @@ public class EmpleadoService {
         return empleado;
 
     }
+    public Empleado obtenerEmpleadoConId(Long id){
+        return repository.findById(id).get();
+    }
 
     @Transactional
     public void descontarSaldo(String mail, String password, Float saldoDesc){

@@ -24,13 +24,15 @@ public class CentroDeportivoController1 {
     }
     @GetMapping("/{centro}/actividades")
     @ResponseBody
-    public List<Actividad> obtenerActividadesDeUnCentro(@PathVariable CentroDeportivo1 centro){
+    public List<Actividad> obtenerActividadesDeUnCentro(@PathVariable Long centro){
         return centroDeportivoService.getActivities(centro);
     }
     @GetMapping("/{centroid}/")
     @ResponseBody
-    public CentroDeportivo1 obtenerCentroById(@PathVariable Long centroid){
-        return centroDeportivoService.getCentroById(centroid);
+    public String obtenerCentroById(@PathVariable Long centroid){
+        String toReturn=centroDeportivoService.getCentroById(centroid);
+        System.out.println(toReturn);
+        return toReturn;
     }
 
 

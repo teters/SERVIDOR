@@ -2,13 +2,12 @@ package com.example.PrimerProyectoTIC1.CheckIn;
 
 import com.example.PrimerProyectoTIC1.Actividades.Actividad;
 import com.example.PrimerProyectoTIC1.User.Empleado;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+
 @Service
 public class CheckInService {
 
@@ -16,7 +15,7 @@ public class CheckInService {
     @Autowired
     CheckInRepository CheckInRepository;
 
-    public void agregarReserva(CheckIn checkIn){
+    public void agregarCheckin(CheckIn checkIn){
         CheckInRepository.save(checkIn);
     }
     public Boolean validarCarneDeSalud(Empleado empleado){
