@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/pruebo")
+@RequestMapping("/checkin")
 public class CheckInController {
 
     @Autowired
@@ -30,10 +30,10 @@ public class CheckInController {
         return "hola";
     }
 
-    @PostMapping("/asd/")
+    @PostMapping("/")
     public String hacerCheckIn(@RequestBody CheckinDTO checkIn){//validar si existe, descontar saldo
-        Long empleado_id=checkIn.getId_empleado();
-        Empleado empleado=empleadoService.obtenerEmpleadoConId(empleado_id);
+        String empleado_id=checkIn.getMail_empleado();
+        Empleado empleado=empleadoService.obtenerEmpleadoPorMailsolamente(empleado_id);
 
         Actividad actividad=actividadService.obtenerActividadPorId(checkIn.getId_actividad());
         LocalDateTime hora=LocalDateTime.now();

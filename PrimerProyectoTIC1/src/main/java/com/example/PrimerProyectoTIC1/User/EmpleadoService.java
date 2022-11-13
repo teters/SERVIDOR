@@ -38,13 +38,11 @@ public class EmpleadoService {
     }
     public Empleado obtenerEmpleadoPorMailsolamente( String mail){
         Empleado empleadoGenerico=new Empleado("error",10L,"contra","incorrecta",".", (float) 1L,1L);
-        List<Empleado> empleados=repository.findAll();
-        Empleado empleado=empleadoGenerico;
-        for (int i = 0; i < empleados.size(); i++) {
-            if(empleados.get(i).getMail().equals(mail)){
-                empleado=empleados.get(i);
-            }
-
+        Empleado empleado=null;
+        try {
+            empleado=repository.findByMail(mail);
+        }catch (Exception e){
+            empleado=empleadoGenerico;
         }
         return empleado;
 

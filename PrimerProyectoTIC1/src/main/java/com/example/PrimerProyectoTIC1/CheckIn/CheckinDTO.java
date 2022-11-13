@@ -1,19 +1,17 @@
 package com.example.PrimerProyectoTIC1.CheckIn;
 
-import java.time.LocalDateTime;
-
 public class CheckinDTO {
-    private Long id_empleado;
+    private String mail_empleado;
     private Long id_actividad;
     private String hora;
 
 
-    public Long getId_empleado() {
-        return id_empleado;
+    public String getMail_empleado() {
+        return mail_empleado;
     }
 
-    public void setId_empleado(Long id_empleado) {
-        this.id_empleado = id_empleado;
+    public void setMail_empleado(String id_empleado) {
+        this.mail_empleado = id_empleado;
     }
 
     public Long getId_actividad() {
