@@ -60,6 +60,11 @@ public class ActividadesController {
     public Actividad obtenerActividadConNombre(@PathVariable String nombre){
         return actividadService.obtenerActividadConNombre(nombre);
     }
+    @GetMapping("/{nombre}/dias/")
+    @ResponseBody
+    public List<String> obtenerDias(@PathVariable String nombre){
+        return actividadService.obtenerDias(nombre);
+    }
 
 
 

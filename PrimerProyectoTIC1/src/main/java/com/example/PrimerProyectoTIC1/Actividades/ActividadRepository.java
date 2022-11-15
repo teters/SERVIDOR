@@ -34,6 +34,9 @@ public interface ActividadRepository extends JpaRepository<Actividad, String> {
 
     @Query("select a from Actividad a where a.nombre=?1")
     List<Actividad> findActividadByNombre(String nombre);
+    @Query("select a.dia from Actividad a where a.nombre=?1")
+    List<String> findDiaByNombre(String nombre);
+
 
 
 }

@@ -17,9 +17,7 @@ public class Empleado extends User1{
     @JoinColumn(name = "empleadoId")
     private List<Reserva> Reservas;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+
     @Column
     private Float saldo;
 
