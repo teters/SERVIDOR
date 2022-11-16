@@ -24,7 +24,7 @@ public class EmpresaService {
         return empresasRepository.findAll();
     }
 
-    public Empresa1 findByNombre(String nombre){
-        return empresasRepository.findByNombre(nombre);
-    }
+    //public Empresa1 findByNombre(String nombre){
+        //return empresasRepository.findByNombre(nombre).get();
+    //}
 }
