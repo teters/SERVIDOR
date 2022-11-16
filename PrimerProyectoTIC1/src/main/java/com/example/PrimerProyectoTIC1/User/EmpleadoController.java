@@ -28,7 +28,7 @@ public class EmpleadoController {
         String mail= empleado.getMail();
         String password=empleado.getPassword();
         Long tel= empleado.getTelefono();
-        Long saldo=empleado.getSaldo();
+        Float saldo=empleado.getSaldo();
         String fechaVenc=empleado.getFechaVenc();
         Long empresaId=empleado.getEmpresaID();
         empleadoService.crearEmpleado(nombre,tel,mail,fechaVenc,password,saldo,empresaId);
@@ -44,6 +44,11 @@ public class EmpleadoController {
     @GetMapping("/getEmpleadoInicio")
     public Empleado obtenerEmpleadoInicio(){
         return empleadoLogin;
+    }
+    @GetMapping("/{mail}/")
+    @ResponseBody
+    public Empleado obtenerEmpleadoConMail(@PathVariable String mail){
+        return empleadoService.obtenerEmpleadoPorMailsolamente(mail);
     }
 
     public void setEmpleadoLogin(Empleado empleadoLogin) {

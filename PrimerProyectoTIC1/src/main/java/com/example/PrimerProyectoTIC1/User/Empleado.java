@@ -17,11 +17,9 @@ public class Empleado extends User1{
     @JoinColumn(name = "empleadoId")
     private List<Reserva> Reservas;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+
     @Column
-    private Long saldo;
+    private Float saldo;
 
 
 
@@ -31,16 +29,16 @@ public class Empleado extends User1{
     //@JoinColumn(name = "empresaID")
     //private Empresa1 empresa;
 
-    public Long getSaldo() {
+    public Float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(Long saldo) {
+    public void setSaldo(Float saldo) {
         this.saldo = saldo;
     }
 
 
-    public Empleado(String nombre, Long telefono, String mail, String fechaVenc, String password, Long saldo, Long empresaID) {
+    public Empleado(String nombre, Long telefono, String mail, String fechaVenc, String password, Float saldo, Long empresaID) {
         super( nombre, telefono, mail, password);
         this.fechaVenc = fechaVenc;
         this.saldo=saldo;

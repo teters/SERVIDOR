@@ -32,7 +32,7 @@ public class Actividad {
     @Column
     private String horario;
 
-     @Column
+    @Column
     private String dia;
 
     @Column
@@ -62,6 +62,13 @@ public class Actividad {
 
     public CentroDeportivo1 getCentroDeportivo1() {
         return centroDeportivo1;
+    }
+
+    public Long getCentro_deportivo_1_id(){
+        return centroDeportivo1.getId();
+    }
+    public void setCentro_deportivo_1_id(Long id){
+        centroDeportivo1.setId(id);
     }
 
 
