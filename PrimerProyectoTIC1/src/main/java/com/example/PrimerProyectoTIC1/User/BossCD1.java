@@ -21,4 +21,8 @@ public class BossCD1 extends User1 {
     public CentroDeportivo1 getCentroDepor() {
         return centroDepor;
     }
+
+    public void setCentroDepor(CentroDeportivo1 centroDepor) {
+        this.centroDepor = centroDepor;
+    }
 }
