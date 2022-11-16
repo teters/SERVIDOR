@@ -66,6 +66,7 @@ public class User1 {
     public String getPassword(){
         return this.password;
     }
+    public void setPassword(String password) {this.password = password;}
 
 
 }
