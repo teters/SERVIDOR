@@ -29,4 +29,7 @@ public class CentroDeportivoService {
     public String getCentroById(Long id){
         return centroDeportivoRepository.findById(id).get().getNombre();
     }
+    public CentroDeportivo1 getCentroByNombre(String nombre){
+        return centroDeportivoRepository.findByNombre(nombre);
+    }
 }
