@@ -26,4 +26,7 @@ public class BossCDService {
         return boss;
 
     }
+    public void agregarManager(BossCD1 boss){
+        bossCDRepository.save(boss);
+    }
 }

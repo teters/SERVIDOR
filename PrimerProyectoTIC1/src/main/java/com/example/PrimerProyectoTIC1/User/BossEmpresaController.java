@@ -20,7 +20,7 @@ public class BossEmpresaController {
     @PostMapping("/")
     public void guardarBossEmpresa(@RequestBody BossEmpresaDTO boss1){
         BossEmpresa1 boss = new BossEmpresa1();
-        //Empresa1 empresa1 = empresaService.findByNombre(boss1.getEmpresaNombre());
+        //Empresa1 empresa1 = empresaService.ObtenerConNombre(boss1.getEmpresaNombre());
         boss.setMail(boss1.getMail());
         boss.setNombre(boss1.getNombre());
         boss.setTelefono(boss1.getTelefono());

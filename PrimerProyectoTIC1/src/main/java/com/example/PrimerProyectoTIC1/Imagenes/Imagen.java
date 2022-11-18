@@ -11,21 +11,14 @@ public class Imagen {
     Long id;
 
     @Lob
-    byte[] content;
+    String content;
 
     @Column
     String nombreActividad;
 
-    public Imagen(byte[] content, String name) {
-        this.content = content;
-        this.nombreActividad = name;
-    }
 
-    public Imagen(Long id, byte[] content, String name) {
-        this.id = id;
-        this.content = content;
-        this.nombreActividad = name;
-    }
+
+
 
     public Imagen() {
 
@@ -39,11 +32,11 @@ public class Imagen {
         this.id = id;
     }
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
+    public void setContent(String content) {
         this.content = content;
     }
 

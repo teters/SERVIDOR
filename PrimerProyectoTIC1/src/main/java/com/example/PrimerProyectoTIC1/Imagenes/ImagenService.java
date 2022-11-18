@@ -16,8 +16,8 @@ public class ImagenService {
     public void agregarImagen(Imagen imagen){
         imagenRepository.save(imagen);
     }
-    public List<byte[]> buscarImagenes(String nombreactividad){
-        return imagenRepository.findContentByNombreActividad(nombreactividad);
+    public String buscarImagenes(String nombreactividad){
+        return imagenRepository.findContentByNombreActividad(nombreactividad).get();
     }
 
 }

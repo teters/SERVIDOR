@@ -19,7 +19,7 @@ public class ImagenController {
     }
     @GetMapping("/{nombre}")
     @ResponseBody
-    public List<byte[]> getImagenes(@PathVariable String nombreActividad){
+    public String getImagenes(@PathVariable String nombreActividad){
         return imagenService.buscarImagenes(nombreActividad);
     }
 
