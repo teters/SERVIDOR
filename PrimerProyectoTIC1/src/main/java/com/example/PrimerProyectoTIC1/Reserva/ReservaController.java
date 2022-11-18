@@ -19,7 +19,7 @@ public class ReservaController {
     @Autowired
     EmpleadoService empleadoService;
     @PostMapping("/")
-    public Boolean guardarReserva(@RequestBody ReservaDTO reservaDTO){
+    public String guardarReserva(@RequestBody ReservaDTO reservaDTO){
         Reserva reserva=new Reserva();
         reserva.setActividadId(reservaDTO.getActividadId());
         reserva.setCentroId(reservaDTO.getCentroId());
@@ -32,9 +32,9 @@ public class ReservaController {
 
         if(reservaService.validarPorCupos(reserva)){
             reservaService.agregarReserva(reserva);
-            return true;
+            return "true";
         }
-        return false;
+        return "false";
     }
     @GetMapping("/{mail}/")
     @ResponseBody
