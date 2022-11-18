@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Table(name="reservas")
 public class Reserva {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @Column

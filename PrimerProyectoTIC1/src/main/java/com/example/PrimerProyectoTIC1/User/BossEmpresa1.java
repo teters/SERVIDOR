@@ -16,8 +16,14 @@ public class BossEmpresa1 extends User1 {
 
     public BossEmpresa1(String nombre, Long tel, String mail, String password) {
         super(nombre,tel,mail,password);
-
-
     }
 
+
+    public Empresa1 getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa1 empresa) {
+        this.empresa = empresa;
+    }
 }

@@ -6,6 +6,7 @@ import com.example.PrimerProyectoTIC1.User.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -31,13 +32,27 @@ public class ReservaController {
 
         if(reservaService.validarPorCupos(reserva)){
             reservaService.agregarReserva(reserva);
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     @GetMapping("/{mail}/")
     @ResponseBody
-    public List<Reserva> obtenerReservasConMail(@PathVariable String mail){
-        return reservaService.getReservasMail(mail);
+    public List<ReservaDTOConDia> obtenerReservasConMail(@PathVariable String mail){
+        List<Reserva> r= reservaService.getReservasMail(mail);
+        List<ReservaDTOConDia> reservaDTOS=new ArrayList<>();
+        ReservaDTOConDia reservaDTO=new ReservaDTOConDia();
+        Empleado empleadoTemp=null;
+        for (int i = 0; i < r.size(); i++) {
+            empleadoTemp=empleadoService.obtenerEmpleadoConId(r.get(i).getEmpleadoId());
+            reservaDTO.setActividadId(r.get(i).getActividadId());
+            reservaDTO.setCentroId(r.get(i).getCentroId());
+            reservaDTO.setFecha(r.get(i).getFecha());
+            reservaDTO.setMail_empleado(empleadoTemp.getMail());
+            reservaDTO.setDia(r.get(i).getDia());
+            reservaDTOS.add(reservaDTO);
+
+        }
+        return reservaDTOS;
     }
 }

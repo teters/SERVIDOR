@@ -23,4 +23,8 @@ public class EmpresaService {
     public List<Empresa1> obtenerListaDeEmpresas(){
         return empresasRepository.findAll();
     }
+
+    //public Empresa1 findByNombre(String nombre){
+        //return empresasRepository.findByNombre(nombre).get();
+    //}
 }
