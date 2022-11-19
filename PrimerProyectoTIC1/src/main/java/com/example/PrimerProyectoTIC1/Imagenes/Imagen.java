@@ -24,13 +24,7 @@ public class Imagen {
 
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
@@ -40,11 +34,11 @@ public class Imagen {
         this.content = content;
     }
 
-    public String getName() {
+    public String getNombreActividad() {
         return nombreActividad;
     }
 
-    public void setName(String name) {
+    public void setNombreActividad(String name) {
         this.nombreActividad = name;
     }
 }

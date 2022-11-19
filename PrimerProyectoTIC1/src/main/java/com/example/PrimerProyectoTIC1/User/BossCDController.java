@@ -2,8 +2,11 @@ package com.example.PrimerProyectoTIC1.User;
 
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivo1;
 import com.example.PrimerProyectoTIC1.CentrosDeportivos.CentroDeportivoService;
+import com.example.PrimerProyectoTIC1.Reserva.Reserva;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("managercentrodep")
@@ -28,7 +31,9 @@ public class BossCDController {
         boss.setNombre(bossy.getNombre());
         boss.setTelefono(bossy.getTelefono());
         boss.setPassword(bossy.getPassword());
-        boss.setCentroDepor(centroDeportivoService.getCentroByNombre(bossy.getNombre()));
+        String nombre= bossy.getcentroDepNombre();
+        CentroDeportivo1 centro=centroDeportivoService.getCentroByNombre(nombre);
+        boss.setCentroDepor(centro);
         bossCDService.agregarManager(boss);
     }
 
@@ -36,6 +41,11 @@ public class BossCDController {
     @ResponseBody
     public CentroDeportivo1 getBossCD(){
         return centroDeportivo1;
+    }
+    @GetMapping("/reservas/centro/")
+    @ResponseBody
+    public List<Reserva> obtenerReservasDelCentroDeManager(){
+        return centroDeportivo1.getReservas();
     }
 
 

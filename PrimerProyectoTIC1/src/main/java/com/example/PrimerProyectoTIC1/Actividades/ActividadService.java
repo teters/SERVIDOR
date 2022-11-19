@@ -56,7 +56,7 @@ public class ActividadService {
         return horarios;
     }
     public List<String> obtenerHorariosActividadCentro(String nombreAct,String nombrecentro){
-        CentroDeportivo1 centro= centroDeportivoRepository.findByNombre(nombrecentro);
+        CentroDeportivo1 centro= centroDeportivoRepository.findByNombre(nombrecentro).get();
         return actividadRepository.findHorarioByActividadCentro(nombreAct,centro);
 
     }

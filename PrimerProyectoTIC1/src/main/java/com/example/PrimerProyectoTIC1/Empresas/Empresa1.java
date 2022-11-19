@@ -38,13 +38,7 @@ public class Empresa1 {
     public Empresa1() {
     }
 
-    public Long getEmpresaID() {
-        return empresaID;
-    }
 
-    public void setEmpresaID(Long empresaID) {
-        this.empresaID = empresaID;
-    }
 
     public Long getTelefono() {
         return telefono;

@@ -30,6 +30,6 @@ public class CentroDeportivoService {
         return centroDeportivoRepository.findById(id).get().getNombre();
     }
     public CentroDeportivo1 getCentroByNombre(String nombre){
-        return centroDeportivoRepository.findByNombre(nombre);
+        return centroDeportivoRepository.findByNombre(nombre).get();
     }
 }
